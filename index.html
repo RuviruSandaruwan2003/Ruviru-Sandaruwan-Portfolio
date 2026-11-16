@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ruviru Sandaruwan | Digital Marketer &amp; Designer</title>
+<meta name="description" content="Portfolio of Ruviru Sandaruwan - digital marketing undergraduate, graphic designer and video editor from Sri Lanka.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAVIGATION ============ -->
+<nav><div class="wrap">
+  <a href="#home" class="logo">Ruviru <b>Sandaruwan</b></a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#thanks">Gratitude</a></li> <!-- MENU NAME: change this word any time -->
+  </ul>
+  <button class="burger" aria-label="Menu" id="burger">&#9776;</button>
+</div></nav>
+
+<!-- ============ HOME / HERO ============ -->
+<header class="hero" id="home"><div class="wrap">
+  <div>
+    <h1><span style="animation-delay:.1s">Ruviru</span> <span style="animation-delay:.25s">Sandaruwan</span></h1>
+    <!-- The text below types itself. Edit the list ROLES in script.js -->
+    <div class="role" id="role"></div>
+    <p class="lead">Digital marketing undergraduate at the University of Kelaniya. I design posts, edit videos and build brand stories that people remember.</p>
+    <a href="#work" class="btn fill">See my work</a>
+    <a data-cv href="assets/Ruviru_Sandaruwan_CV.pdf" class="btn" download>Download CV</a>
+    <div class="stats">
+      <div><strong data-count="3">0</strong><small>Leo Club avenues led</small></div>
+      <div><strong data-count="4">0</strong><small>Certificates earned</small></div>
+      <div><strong data-count="60" data-plus>0</strong><small>Designs &amp; videos made</small></div>
+    </div>
+  </div>
+  <!-- Photos come from PHOTOS in script.js. They change automatically. -->
+  <div class="photo"><div class="frame" id="slider"></div><div class="dots" id="dots"></div><span class="chip c1">🎨 Designer</span><span class="chip c2">🎬 Video Editor</span><span class="chip c3">📣 Marketer</span></div>
+</div></header>
+
+<!-- ============ ABOUT + SKILLS ============ -->
+<section id="about"><div class="wrap two">
+  <div class="rv">
+    <h2>About me</h2>
+    <p class="sub">I study B.B.Mgt Digital Marketing (Honours) at the University of Kelaniya. Before university I taught MS Office, HTML, Photoshop and video editing to students from Grade 3 to A/L level. I love turning ideas into clear, good-looking content.</p>
+    <p class="sub">I also lead projects in the Leo Club, play for the university volleyball team, and speak Sinhala and English.</p>
+  </div>
+  <div class="bars rv" id="skills"><!-- bars are built from SKILLS in script.js --></div>
+</div></section>
+
+<!-- ============ WORK ============ -->
+<section id="work"><div class="wrap">
+  <div class="rv"><h2>My work</h2>
+  <p class="sub">Posts, videos and websites I created for clubs, events and campaigns. Click any card to open it.</p></div>
+  <div class="filters" id="filters">
+    <button class="on" data-f="all">All</button>
+    <button data-f="post">Posts &amp; Flyers</button>
+    <button data-f="video">Videos</button>
+    <button data-f="web">Websites</button>
+  </div>
+  <div class="grid" id="grid"><!-- cards are built from WORKS in script.js --></div>
+</div></section>
+
+<!-- ============ CV (two tabs: Summary / Full PDF) ============ -->
+<section id="cv"><div class="wrap">
+  <div class="rv">
+    <h2>My CV</h2>
+    <p class="sub">Read the short version, or open the full CV in the second tab.</p>
+    <div class="tabs" id="tabs"><button class="on" data-p="p1">Summary</button><button data-p="p2">Full CV (PDF)</button></div>
+  </div>
+  <div class="pane on" id="p1"><div class="two">
+    <div><h3 style="margin-bottom:18px">Education &amp; experience</h3><div class="tl">
+      <article><small>2024 - 2028</small><h3>B.B.Mgt Digital Marketing (Honours)</h3><p>University of Kelaniya. Consumer Behavior, Digital Marketing.</p></article>
+      <article><small>Now</small><h3>Diploma in ICT (DIT)</h3><p>IMBS Green Campus, Sri Lanka.</p></article>
+      <article><small>2023 - 2024</small><h3>Assistant Lecturer</h3><p>Nenasala IT Institute, Deniyaya. Taught MS Office, HTML, Photoshop and video editing.</p></article>
+      <article><small>2022/23</small><h3>G.C.E. A/L: 3 A passes</h3><p>Accounting, Business Studies, Economics. M/R Deniyaya Central College.</p></article>
+    </div></div>
+    <div><h3 style="margin-bottom:18px">Leadership</h3><div class="tl">
+      <article><small>2026/27</small><h3>Co-Director</h3><p>Clean Water &amp; Energy Conservation Avenue, Leo Club of University of Kelaniya.</p></article>
+      <article><small>2025/26</small><h3>LB Lead</h3><p>Religion &amp; Culture Avenue. Projects: Dirgayu and Ekaloka.</p></article>
+      <article><small>2024/25</small><h3>PR &amp; Marketing Coordinator</h3><p>Wildlife &amp; Animal Conservation Avenue. Project: Prayama 2.0, awarded Best Project for Hunger.</p></article>
+    </div><div class="chips"><span>Photoshop</span><span>CapCut</span><span>WordPress</span><span>HTML</span><span>MS Office</span></div></div>
+  </div></div>
+  <div class="pane" id="p2"><div class="cvbox">
+    <!-- the CV file is set by CV_FILE in script.js -->
+    <iframe id="cvframe" title="Ruviru Sandaruwan CV"></iframe>
+    <p><span>Phone browser not showing the CV? Use the buttons.</span><span><a data-cv target="_blank" rel="noopener" href="#">Open in new tab</a> &nbsp;|&nbsp; <a data-cv download href="#">Download CV</a></span></p>
+  </div></div>
+</div></section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact"><div class="wrap two">
+  <div class="rv">
+    <h2>Let's work together</h2>
+    <p class="sub">Have a project, an event or a job opening? Send a message and I will reply soon.</p>
+    <ul class="info">
+      <li><b>Email</b><a href="mailto:ruvirusandaruwan63@gmail.com">ruvirusandaruwan63@gmail.com</a></li>
+      <li><b>WhatsApp</b><a href="https://wa.me/94774278450">+94 77 427 8450</a></li>
+      <li><b>Phone</b>+94 70 306 9660</li>
+      <li><b>Address</b>426/A, Main Street, Deniyaya</li>
+    </ul>
+  </div>
+  <!-- This form opens WhatsApp with the visitor's message ready. Your number is set by WHATSAPP_NUMBER in script.js -->
+  <form id="form" class="rv">
+    <input name="name" placeholder="Your name" required aria-label="Your name">
+    <textarea name="message" rows="5" placeholder="Type your message. It will open in my WhatsApp chat." required aria-label="Message"></textarea>
+    <button class="btn fill" type="submit">Send on WhatsApp</button>
+    <small style="color:var(--muted)">WhatsApp will open with your message ready. Press send there.</small>
+  </form>
+</div></section>
+
+<!-- ============ THANK YOU (appears here after the form is sent) ============ -->
+<section id="thanks"><div class="wrap rv" style="text-align:center">
+  <svg class="tick" viewBox="0 0 110 110" aria-hidden="true"><circle cx="55" cy="55" r="50"/><path d="M32 57l16 16 31-34"/></svg>
+  <!-- This text changes automatically after a message is sent (see script.js) -->
+  <h2 id="thx-h">Thank you for visiting!</h2><p class="sub" id="thx-p" style="margin:0 auto 28px">I appreciate your time. If you like my work, send me a message and I will reply soon.</p>
+  <a class="btn fill" href="#home">Back to top</a> <a class="btn" data-cv target="_blank" rel="noopener" href="#">View my CV</a>
+</div></section>
+
+<footer>&copy; 2026 Ruviru Sandaruwan. Built with HTML, CSS and JavaScript.</footer>
+
+<!-- Pop-up viewer for work items -->
+<div id="lb" role="dialog" aria-modal="true"><div class="box">
+  <div class="bar2"><span class="badge" id="lbk"></span>
+    <div class="tools"><a class="ic" id="lbd" title="Download" download target="_blank">&#8681;</a><button class="ic" id="lbp" title="Previous">&#8249;</button><button class="ic" id="lbn" title="Next">&#8250;</button><button class="ic x" title="Close">&times;</button></div></div>
+  <div class="frame2" id="lbc"></div>
+  <div class="cap"><h3 id="lbh"></h3><p id="lbt"></p></div>
+</div></div>
+
+<script src="script.js"></script>
+</body>
+</html>
