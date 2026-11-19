@@ -22,7 +22,7 @@ const CV_FILE = "assets/Ruviru_Sandaruwan_CV.pdf";
 const CV_VERSION = 1;
 
 /* Photos on the home page (they change every few seconds). */
-const PHOTOS = ["assets/img/ruviru.jpg", "assets/img/ruviru-2.jpg"];
+const PHOTOS = ["assets/img/01.png", "assets/img/02.png","assets/img/03.png","assets/img/04.png","assets/img/05.png","assets/img/06.png" ];
 const PHOTO_SECONDS = 4;
 
 /* Words that type on the home page. */
