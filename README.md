@@ -1,24 +1,36 @@
-# Ruviru Sandaruwan - Portfolio
+# Ruviru Sandaruwan - Portfolio  (GitHub Pages ready)
 
-## Put it online with GitHub Pages (free)
-1. Create a GitHub account, then a new repository named `yourusername.github.io` (Public).
-2. Upload ALL files and the `assets` folder. Keep the same structure.
-3. Repository > Settings > Pages > Source: "Deploy from a branch" > `main` > `/ (root)` > Save.
-4. After 1-2 minutes open https://yourusername.github.io
+## 1. Put it online (free)  - ඔන්ලයින් දැමීම
+1. Make a GitHub account, then a new **Public** repository named `yourusername.github.io`.
+2. Upload ALL files from this folder (keep the same folders). `.nojekyll` must go too.
+3. Repository > **Settings > Pages** > Source: *Deploy from a branch* > `main` > `/ (root)` > Save.
+4. Wait 1-2 minutes, then open `https://yourusername.github.io`.
+Do NOT test by double-clicking index.html (YouTube / Google refuse on a local file). Test on GitHub, or run `python -m http.server` and open http://localhost:8000
 
-## Add your works
-1. Copy your images/videos from "Design Final Output" into `assets/works/` (keep names simple, e.g. flyer1.jpg).
-2. Open `script.js`, edit the `WORKS` list. One line = one work.
-3. Videos over 100 MB cannot go to GitHub. Upload them to YouTube (unlisted) and use the YouTube link with type "web".
+## 2. What is each file?
+| File | What it does | Do you edit it? |
+|---|---|---|
+| `index.html` | page text (about, CV summary, contact) | sometimes |
+| `script.js`  | PART 1 settings, PART 2 your works, PART 3 code | PART 1 and 2 only |
+| `style.css`  | colours and looks (change colours at the top) | rarely |
+| `thank-you.html` | spare thank-you page | no |
+| `shrink-images.py` | makes big flyers small | run it |
+| `assets/` | CV PDF, photos, small work files | add files |
 
-## Change colours
-Open `style.css`, edit the values at the top inside `:root`.
+## 3. Add a work  - වැඩක් එකතු කිරීම
+Open `script.js`, find **PART 2**. One `{ ... },` block = one card. Copy a template from the notes there, change the words and the `file:` link.
+**Delete a work** = delete its whole block. No comma after the last block.
 
-## Contact form
-Messages open your WhatsApp. To change the number, edit `WHATSAPP_NUMBER` in `script.js`.
+## 4. Big files (GitHub does not accept files over ~25 MB)
+- **Video** -> upload to **YouTube**, Visibility = *Unlisted*, paste the link in `file:`. (fast, free, any size)
+- **Flyer** -> put it in `big-flyers/`, run `python shrink-images.py` (needs `pip install pillow`). Small .jpg files appear in `assets/works/`.
+- **TikTok / Instagram / Facebook** -> post must be Public. Use the LONG link (TikTok: has `/video/123...`).
+- **Google Drive** -> Share > "Anyone with the link". If it does not show, use YouTube (videos) or the small .jpg (flyers).
+- Every preview has an **Open original** button that always works.
 
-## Update your CV later
-Replace `assets/Ruviru_Sandaruwan_CV.pdf` with the new file (same name), then in `script.js` change `CV_VERSION` from 1 to 2. Done.
-
-## Change the home photos
-Put pictures in `assets/img/` and add them to `PHOTOS` in `script.js`. They fade automatically.
+## 5. Other updates
+- **CV:** replace `assets/Ruviru_Sandaruwan_CV.pdf` (same name), then in `script.js` change `CV_VERSION` 1 -> 2.
+- **Home photos:** put pictures in `assets/img/`, add them to `PHOTOS` in `script.js`.
+- **WhatsApp number:** `WHATSAPP_NUMBER` in `script.js`.
+- **Typing words / skills:** `ROLES` and `SKILLS` in `script.js`.
+- **Colours:** top of `style.css`.
