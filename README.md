@@ -17,8 +17,35 @@ Do NOT test by double-clicking index.html (YouTube / Google refuse on a local fi
 | `shrink-images.py` | makes big flyers small | run it |
 | `assets/` | CV PDF, photos, small work files | add files |
 
-## 3. Add a work  - වැඩක් එකතු කිරීම
-Open `script.js`, find **PART 2**. One `{ ... },` block = one card. Copy a template from the notes there, change the words and the `file:` link.
+## 3. Folders on the website  - ෆෝල්ඩර
+The "My work" part shows 3 main folders: **LEO Club** (`leo`), **Department of Marketing Management** (`dept`), **Other Design** (`other`).
+Inside each folder the website makes **Images**, **Videos** and **Websites** by itself (from the `type` of the work).
+The filter buttons work on folders: choose **Videos** and only folders that have videos stay.
+The folder tree is `FOLDERS` in `script.js` (PART 2). Real folders for your files are in `assets/works/` (same names).
+
+### 3a. MOVE an image or video to a folder  (easiest way)
+1. Open `script.js`, find the block of the work in `WORKS`.
+2. Write ONE word in it:  `folder:"mpl"`  (copy the name from the list in the QUICK GUIDE just above `WORKS`).
+3. Save. Done. Nothing else to change.
+
+| Write this | It goes to |
+|---|---|
+| `folder:"leo"` | LEO Club |
+| `folder:"clean-water"` / `"clean-water-2"` / `"religion-culture"` / `"wildlife"` | LEO Club > that avenue |
+| `folder:"dept"` | Department |
+| `folder:"assignment"` / `"talent-show"` / `"mpl"` / `"stylish-marketer"` / `"other-design"` | Department > that folder |
+| `folder:"other"` (or no folder) | Other Design |
+
+Example: `{type:"video", title:"MPL Promo", note:"Cricket promo", folder:"mpl", file:"https://youtu.be/XXXXXXXXXXX", icon:"🏏", c:["#1b5e20","#9ccc65"]},`
+Wrong folder name? The work goes to Other Design and the browser console (F12) lists every name you can use.
+
+### 3b. Make a NEW folder or a folder INSIDE a folder
+Open `FOLDERS` in `script.js`. Copy one block and give it a NEW `id` (small letters, no spaces, use `-`).
+For a folder inside another folder, put `sub:[ ... ]` inside the parent block (see `clean-water` > `clean-water-2`).
+If the page goes blank: check the commas, the brackets `[ ]` `{ }`, and that the id has no spaces. Delete a folder = delete its block.
+
+### 3c. Add a work  - වැඩක් එකතු කිරීම
+Find **PART 2** in `script.js`. One `{ ... },` block = one card. Copy a template from the notes there, change the words and the `file:` link, add `folder:"..."`.
 **Delete a work** = delete its whole block. No comma after the last block.
 
 ## 4. Big files (GitHub does not accept files over ~25 MB)
@@ -34,3 +61,5 @@ Open `script.js`, find **PART 2**. One `{ ... },` block = one card. Copy a templ
 - **WhatsApp number:** `WHATSAPP_NUMBER` in `script.js`.
 - **Typing words / skills:** `ROLES` and `SKILLS` in `script.js`.
 - **Colours:** top of `style.css`.
+- **Achievements / goals (CV > Summary tab):** one card shows at a time. Text is on the LEFT and types itself; the picture is on the RIGHT and comes, moves and goes with random animations. Edit `ACHIEVEMENTS`, `GOALS` and the speed numbers (`SECONDS`, `TITLE_TYPE`, `TEXT_TYPE`) at the END of `script.js`. Put certificate pictures in `assets/achievements/` (small .jpg, under 500 KB) and write the path in `img:`.
+- **Footer:** the words are in `index.html` (search `FOOTER`). Add a link by copying one `<li>` line. The year and WhatsApp link update by themselves.

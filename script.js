@@ -22,7 +22,7 @@ const CV_FILE = "assets/Ruviru_Sandaruwan_CV.pdf";
 const CV_VERSION = 1;
 
 /* Photos on the home page (they change every few seconds). */
-const PHOTOS = ["assets/img/1.png", "assets/img/2.png","assets/img/3.png","assets/img/4.png","assets/img/5.png","assets/img/6.png" ];
+const PHOTOS = ["assets/img/ruviru.jpg", "assets/img/ruviru-2.jpg"];
 const PHOTO_SECONDS = 4;
 
 /* Words that type on the home page. */
@@ -49,6 +49,9 @@ const SKILLS = [["Graphic Design",90],["Video Editing",88],["Adobe Photoshop",90
    c      two card colours (the preview background also uses them)
    thumb  (optional) small picture for the card
    as     (optional) "video" or "post" - only if the code guessed wrong for a link
+
+   folder  (optional) which folder it lives in, e.g. folder:"leo/clean-water"  (see FOLDERS above).
+           No folder = it goes to "Other Design".
 
    ---------- BIG FILES (GitHub does not accept files over about 25 MB) ----------
    VIDEO   -> upload to YouTube, choose "Unlisted", paste the link in "file".  (best: fast, free, any size)
@@ -116,13 +119,100 @@ const SKILLS = [["Graphic Design",90],["Video Editing",88],["Adobe Photoshop",90
    E) A photo from a link (Drive, Dropbox, any direct link):
       {type:"post", title:"My Photo", note:"Photo", file:"https://drive.google.com/file/d/XXXXXXXX/view?usp=sharing", border:"none", icon:"📷", c:["#0288d1","#00695c"]},
 
+   F) A work inside a folder (any type: post, video or web):
+      {type:"video", title:"Opening Day", note:"Leo Club", folder:"leo/wildlife", file:"https://youtu.be/XXXXXXXXXXX", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
+
    RULES:  keep every path / link inside quotes " "  -  put a comma after each block (not after the last one).
    ===================================================================== */
+/* =====================================================================
+   FOLDERS  -  the folder tree on the "My work" part of the website
+   ONE BLOCK = ONE FOLDER.     "sub" = the folders inside it.
+     id      short name, small letters, NO SPACES (use - instead).  Example: "clean-water-2"
+     name    name shown on the folder card          note  small text under the name
+     icon    emoji                                  c     two colours
+     covers  (optional) your own pictures for the folder card, e.g. covers:["assets/img/leo1.jpg"]
+             If you do not write covers, the website takes pictures from the works inside the folder
+             and changes them at random.
+
+   THE 3 MAIN FOLDERS:   leo  =  LEO Club      dept  =  Department      other  =  Other Design
+   Inside every folder the website makes the folders "Images" (type "post"), "Videos" (type "video")
+   and "Websites" (type "web") BY ITSELF.
+
+   ---------- HOW TO ADD A NEW FOLDER ----------
+   A) A folder next to the others:   copy one block, give it a NEW id, change name / note / icon.
+   B) A folder INSIDE another folder (sub-folder): inside that folder's block, write  sub:[ ... ]
+      after c:[...]  - like "clean-water" below, which has "clean-water-2" inside it.
+      You can go as deep as you want.
+
+        {id:"clean-water", name:"...", note:"...", icon:"💧", c:["#0288d1","#00695c"], sub:[
+          {id:"clean-water-2", name:"...", note:"...", icon:"💧", c:["#0288d1","#00695c"]}
+        ]},
+
+   THE 4 THINGS THAT GO WRONG (check these if the page goes blank):
+     1. a comma "," after every block except the LAST one in a list
+     2. every  [  has a  ]   and every  {  has a  }   (count them)
+     3. the id has no spaces
+     4. every text is inside quotes " "
+   To DELETE a folder: delete its whole block (works inside it move to "other").
+   Do NOT delete the folder with id "other".
+   ===================================================================== */
+const FOLDERS = [
+  {id:"leo", name:"LEO Club", note:"Leo Club of University of Kelaniya", icon:"🦁", c:["#ffc857","#b71c1c"], sub:[
+    {id:"clean-water",      name:"Clean Water & Energy Conservation Avenue", note:"Projects and campaigns", icon:"💧", c:["#0288d1","#00695c"], sub:[
+      {id:"clean-water-2",  name:"Clean Water & Energy Conservation Avenue 2", note:"More projects and campaigns", icon:"💧", c:["#0288d1","#00695c"]},
+      {id:"clean-water-3",  name:"Clean Water & Energy Conservation Avenue 2", note:"More projects and campaigns", icon:"💧", c:["#0288d1","#00695c"]}
+    ]},
+    {id:"religion-culture", name:"Religion & Culture Avenue",                note:"Dirgayu, Ekaloka and more", icon:"🪷", c:["#ad1457","#ffc857"]},
+    {id:"wildlife",         name:"Wildlife & Animal Conservation Avenue",    note:"Prayama 2.0 and more", icon:"🐘", c:["#2e7d32","#ffd54f"]}
+  ]},
+  {id:"dept", name:"Department of Marketing Management", note:"University of Kelaniya", icon:"🎓", c:["#283593","#ad1457"], sub:[
+    {id:"assignment",       name:"Assignment",                                   note:"Class assignments", icon:"📝", c:["#00838f","#283593"]},
+    {id:"talent-show",      name:"Inbetween - Talent Show",                      note:"Talent show designs and videos", icon:"🎤", c:["#6a1b9a","#ff3d6e"]},
+    {id:"mpl",              name:"MPL - Marketing Premier League Cricket Tournament", note:"Cricket tournament", icon:"🏏", c:["#1b5e20","#9ccc65"]},
+    {id:"stylish-marketer", name:"Stylish Marketer - Fashion Show",              note:"Fashion show", icon:"👗", c:["#4a148c","#ffc857"]},
+    {id:"other-design",     name:"Other Design",                                 note:"More department work", icon:"🎨", c:["#37474f","#ff3d6e"]}
+  ]},
+  {id:"other", name:"Other Design", note:"Cards, labels, mockups and videos", icon:"🎨", c:["#ff3d6e","#6a1b9a"]}
+];
+
+
+/* =====================================================================
+   QUICK GUIDE  -  MOVE ANY IMAGE OR VIDEO TO A FOLDER   (the easy way)
+   In the block of the work, write ONE word:   folder:"..."
+   Copy a line from this list (the short name on the left is enough):
+
+     folder:"leo"                     ->  LEO Club (main folder)
+     folder:"clean-water"             ->  LEO Club > Clean Water & Energy Conservation Avenue
+     folder:"clean-water-2"           ->  LEO Club > Clean Water ... > Clean Water ... 2
+     folder:"religion-culture"        ->  LEO Club > Religion & Culture Avenue
+     folder:"wildlife"                ->  LEO Club > Wildlife & Animal Conservation Avenue
+
+     folder:"dept"                    ->  Department (main folder)
+     folder:"assignment"              ->  Department > Assignment
+     folder:"talent-show"             ->  Department > Inbetween - Talent Show
+     folder:"mpl"                     ->  Department > MPL Cricket Tournament
+     folder:"stylish-marketer"        ->  Department > Stylish Marketer - Fashion Show
+     folder:"other-design"            ->  Department > Other Design
+
+     folder:"other"   (or no folder)  ->  Other Design (main folder)
+
+   The long way also works:  folder:"leo/wildlife".   A new folder you make in FOLDERS works the same way.
+   You do NOT choose Images or Videos: the website puts a work in "Images" when type is "post",
+   and in "Videos" when type is "video". Only change  type  and  folder.
+
+   EXAMPLE - move a video to the Department > MPL folder:
+     {type:"video", title:"MPL Promo", note:"Cricket promo", folder:"mpl", file:"https://youtu.be/XXXXXXXXXXX", icon:"🏏", c:["#1b5e20","#9ccc65"]},
+
+   If you write a folder name that does not exist, the work goes to "Other Design" and the browser
+   console (press F12) shows a message with every name you can use.
+   ===================================================================== */
+
+
 const WORKS = [
 
   /* ----- DESIGNS ----- */
   {type:"post", title:"Meetup Flyer", note:"Event flyer", file:"assets/works/2.png", icon:"🎨", c:["#ff3d6e","#6a1b9a"]},
-  {type:"post", title:"Clean Water & Energy Avenue", note:"Leo Club campaign post", file:"assets/works/Clean Water and Energy Conservation avenue.png", icon:"💧", c:["#0288d1","#00695c"]},
+  {type:"post", title:"Clean Water & Energy Avenue", note:"Leo Club campaign post", folder:"leo/clean-water/clean-water-2", file:"assets/works/Clean Water and Energy Conservation avenue.png", icon:"💧", c:["#0288d1","#00695c"]},
   {type:"post", title:"Leadership Body Announcement", note:"Countdown series (Open Soon / Open Now / Closed)", file:"assets/works/2.png", icon:"📣", c:["#ffc857","#b71c1c"]},
 
   /* INVITATION: 3 pages, opens one by one from top to bottom, NO border, original design only.
@@ -131,8 +221,8 @@ const WORKS = [
   {type:"post", title:"Invitation", note:"Formal invitation design", border:"none",
    pages:[
      {file:"assets/works/invitation-1.png", label:"Front Page"},
-     {file:"https://drive.google.com/file/d/14XHHpRFkmL6DOqcIcmqc48RBqOMNJVQ5/view?usp=sharing", label:"Details Page"},
-     {file:"https://klnaclk-my.sharepoint.com/:i:/g/personal/sandaru-bm22204_stu_kln_ac_lk/IQAzcj9_O3SQRaJzkVdJKAWZAZTMnZ8oLXrvdXMl3WZRcp4?e=Co8bi9", label:"Back Page"}
+     {file:"assets/works/invitation-2.png", label:"Details Page"},
+     {file:"assets/works/invitation-3.png", label:"Back Page"}
    ],
    icon:"💌", c:["#283593","#ad1457"]},
 
@@ -149,22 +239,13 @@ const WORKS = [
   /* This one is a Google Drive link. Drive > Share > "Anyone with the link" is required.
      If Drive keeps showing an error, upload the video to YouTube as "Unlisted" and paste that link instead. */
   {type:"video", title:"Ruviru BBV", note:"Brand video", file:"https://drive.google.com/file/d/1QQ_c0DDu2Z0t5GKykJFYRNV3UBsyb9Gt/view?usp=sharing", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
-
-  {type:"video", title:"CBL kalo", note:"video", border:"none",
-   pages:[
-     {file:"https://drive.google.com/file/d/1QQ_c0DDu2Z0t5GKykJFYRNV3UBsyb9Gt/view?usp=sharing", label:"Front Page"},
-     {file:"https://drive.google.com/file/d/1QQ_c0DDu2Z0t5GKykJFYRNV3UBsyb9Gt/view?usp=sharing", label:"Details Page"},
-     {file:"https://drive.google.com/file/d/1QQ_c0DDu2Z0t5GKykJFYRNV3UBsyb9Gt/view?usp=sharing", label:"Back Page"},
-   ],
-   icon:"🎶", c:["#283593","#ad1457"]},
-
   {type:"video", title:"Entrepreneurship & Innovation", note:"Promo video", file:"assets/works/Audition 2.mp4", icon:"💡", c:["#00838f","#283593"]},
   {type:"video", title:"Coming Soon Teaser", note:"Event teaser video", file:"assets/works/Final Coming Soon Video.mp4", icon:"⏳", c:["#212121","#ff3d6e"]},
   {type:"video", title:"Stylish Maketer First Recap", note:"Event recap video", file:"assets/works/Stylish Maketer First Recap Video.mp4", icon:"🎞️", c:["#4a148c","#ffc857"]},
 
   /* ----- WEBSITES (open in a new tab) ----- */
   {type:"web", title:"Website Project 1", note:"Replace with your website link", file:"https://example.com", icon:"🌐", c:["#0d47a1","#00bcd4"]},
-  {type:"web", title:"Website Project 2", note:"Replace with your website link", file:"https://elora.com.lk/", icon:"💻", c:["#37474f","#ff3d6e"]}
+  {type:"web", title:"Website Project 2", note:"Replace with your website link", file:"https://example.com", icon:"💻", c:["#37474f","#ff3d6e"]}
 
   /* ADD A NEW WORK HERE: put a comma after the block above, then paste a template. */
 ];
@@ -416,10 +497,33 @@ if (sl && dots){
 
 /* ---------- 3.5  Work cards and filter buttons ---------- */
 
-const grid = $('grid');
+const view   = $('view');      // where folders and cards are drawn
+const crumbs = $('crumbs');    // the path line:  My work > LEO Club > ...
+let FILTER = 'all';            // all | post | video | web   (set by the filter buttons)
+let PATH   = [];               // the folder we are inside now, e.g. ["leo","clean-water"]
 
-// Preview picture for a card: your own "thumb", or taken from a YouTube / Google Drive link
-function thumbImg(w){
+// --- 1) Folder helpers ---
+// Finds a folder from its ids, e.g. ["leo","wildlife"]. Returns null if it does not exist.
+const findFolder = ids => { let list = FOLDERS, node = null; for (const id of ids) { node = (list || []).find(f => f.id === id); if (!node) return null; list = node.sub; } return node; };
+
+// Finds the full path from just the short name, e.g. "wildlife" -> "leo/wildlife". Returns "" if there is none.
+const pathOfId = (id, list = FOLDERS, base = []) => { for (const f of list) { const p = base.concat(f.id); if (f.id === id) return p.join('/'); const r = f.sub ? pathOfId(id, f.sub, p) : ''; if (r) return r; } return ''; };
+// Every folder path that exists (shown in the console when a folder name is wrong)
+const allPaths = (list = FOLDERS, base = []) => list.flatMap(f => { const p = base.concat(f.id); return [p.join('/')].concat(f.sub ? allPaths(f.sub, p) : []); });
+
+// Every work gets its folder path in w._f.  You may write the long path ("leo/wildlife") or just the short name ("wildlife").
+WORKS.forEach(w => {
+  let p = String(w.folder || '').trim().replace(/^\/+|\/+$/g, '').split('/').filter(Boolean);
+  if (p.length && !findFolder(p)) { const full = pathOfId(p[p.length - 1]); if (full) p = full.split('/'); }   // short name -> full path
+  if (w.folder && !findFolder(p)) console.warn('Unknown folder "' + w.folder + '" for the work: ' + w.title + '. Folders you can use: ' + allPaths().join('  |  '));
+  w._f = findFolder(p) ? p.join('/') : (findFolder(['other']) ? 'other' : '');
+});
+const inFolder = (w, path) => w._f === path || w._f.startsWith(path + '/');       // inside this folder or deeper
+const countIn  = path => { const c = {post:0, video:0, web:0}; WORKS.forEach(w => { if (inFolder(w, path)) c[w.type] = (c[w.type] || 0) + 1; }); return c; };
+
+// --- 2) Pictures ---
+// Small preview address of a work: your own "thumb", or taken from a YouTube / Google Drive link
+function thumbSrc(w){
   const first = (w.pages && w.pages.length) ? w.pages[0] : w.file;
   const link  = String((first && first.file) || first || '');
   let src = w.thumb || '';
@@ -429,26 +533,126 @@ function thumbImg(w){
   if (!src && /drive\.google\.com/i.test(link) && (m = link.match(/\/file\/d\/([\w-]+)|[?&]id=([\w-]+)/)))
     src = w.type === 'video' ? 'https://drive.google.com/thumbnail?id=' + (m[1] || m[2]) + '&sz=w640'
                              : 'https://lh3.googleusercontent.com/d/' + (m[1] || m[2]) + '=w480';
+  return src;
+}
+function thumbImg(w){
+  const src = thumbSrc(w);
   return src ? `<img src="${esc(src)}" alt="${esc(w.title)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : '';
 }
 
-// Build one card for every work
-if (grid) grid.innerHTML = WORKS.map((w, i) => {
+// All pictures that can be shown on a folder card (your "covers" + pictures of the works inside)
+function coverSrcs(path){
+  const node = findFolder(path.split('/'));
+  const out  = ((node && node.covers) || []).slice();
+  WORKS.forEach(w => {
+    if (!inFolder(w, path) || w.type === 'web') return;
+    let src = thumbSrc(w);
+    if (!src){ const f = pagesOf(w)[0], r = resolveLink(f.file, f.as || w.type); if (r.kind === 'image') src = r.src; }   // your own picture file
+    if (src) out.push(src);
+  });
+  return out;
+}
+
+// --- 3) The cards ---
+const plural = (n, one, many) => n + ' ' + (n === 1 ? one : many);
+
+// One work card (same as before)
+function cardHtml(w, i){
   const count = w.type === 'web' ? 1 : pagesOf(w).length;
   return `
   <button class="card" data-t="${w.type}" data-i="${i}">
     <div class="thumb" style="--c1:${w.c[0]};--c2:${w.c[1]}"><span class="ico">${w.icon}</span>${thumbImg(w)}${w.type === 'video' ? '<i class="play">▶</i>' : ''}</div>
     <h3>${w.title}</h3><p>${w.note}${count > 1 ? ` · ${count} pages` : ''}</p>
   </button>`;
-}).join('');
+}
+
+// One folder card
+function folderCard(f, path){
+  const n = countIn(path), c = f.c || ['#283593', '#ad1457'];
+  const bits = [];
+  if (f.sub && f.sub.length)                           bits.push(`<b>📁 ${plural(f.sub.length, 'folder', 'folders')}</b>`);
+  if ((FILTER === 'all' || FILTER === 'post')  && n.post)  bits.push(`<b>🖼️ ${plural(n.post, 'image', 'images')}</b>`);
+  if ((FILTER === 'all' || FILTER === 'video') && n.video) bits.push(`<b>🎬 ${plural(n.video, 'video', 'videos')}</b>`);
+  if ((FILTER === 'all' || FILTER === 'web')   && n.web)   bits.push(`<b>🌐 ${plural(n.web, 'website', 'websites')}</b>`);
+  if (!n.post && !n.video && !n.web && !(f.sub && f.sub.length)) bits.push('<b>Coming soon</b>');
+  return `
+  <button class="fold" data-p="${esc(path)}" style="--c1:${c[0]};--c2:${c[1]}">
+    <div class="fold-cover"><span class="ico">${f.icon || '📁'}</span></div>
+    <div class="fold-info"><h3>${f.name}</h3><p>${f.note || ''}</p><div class="fold-badges">${bits.join('')}</div></div>
+  </button>`;
+}
+
+// --- 4) Folder pictures that change at random ---
+let coverTimer = null;
+function setCover(el){
+  const s = el._srcs; if (!s || !s.length) return;
+  let src; do { src = pick(s); } while (s.length > 1 && src === el._cur);            // a random picture, never the same twice
+  el._cur = src;
+  const box = el.querySelector('.fold-cover'), im = new Image();
+  im.alt = ''; im.referrerPolicy = 'no-referrer';
+  im.onload = () => { box.querySelectorAll('img').forEach(o => o.remove()); im.className = 'cv ' + pick(['c1','c2','c3','c4']); box.appendChild(im); };   // random animation
+  im.src = src;                                                                        // if it cannot load, the icon stays
+}
+function startCovers(){
+  clearInterval(coverTimer);
+  const els = [...view.querySelectorAll('.fold')];
+  els.forEach(el => { el._srcs = coverSrcs(el.dataset.p); el._cur = ''; setCover(el); });
+  if (els.length) coverTimer = setInterval(() => { if (!document.hidden) els.forEach(el => { if (Math.random() < 0.6) setCover(el); }); }, 3500);
+}
+
+// --- 5) Draw the page: folders first, then the Images / Videos / Websites of the open folder ---
+function render(){
+  const here = PATH.join('/'), node = findFolder(PATH), kids = node ? (node.sub || []) : FOLDERS;
+
+  // path line with a Back button
+  crumbs.innerHTML = PATH.length
+    ? `<button class="crumb-back" data-p="${esc(PATH.slice(0, -1).join('/'))}">← Back</button><button data-p="">📁 My work</button>`
+      + PATH.map((id, k) => { const f = findFolder(PATH.slice(0, k + 1)); const last = k === PATH.length - 1;
+          return ' › ' + (last ? `<b>${f.name}</b>` : `<button data-p="${esc(PATH.slice(0, k + 1).join('/'))}">${f.name}</button>`); }).join('')
+    : '<b>📁 My work</b>';
+
+  let html = '';
+  // folders (when a filter is on, only folders that have that kind of work)
+  const shown = kids.filter(f => FILTER === 'all' || countIn((here ? here + '/' : '') + f.id)[FILTER] > 0);
+  if (shown.length) html += `<div class="fold-grid">${shown.map(f => folderCard(f, (here ? here + '/' : '') + f.id)).join('')}</div>`;
+
+  // works that live directly in this folder: Images / Videos / Websites
+  const direct = WORKS.map((w, i) => [w, i]).filter(([w]) => w._f === here && (FILTER === 'all' || w.type === FILTER));
+  [['post', '🖼️', 'Images'], ['video', '🎬', 'Videos'], ['web', '🌐', 'Websites']].forEach(([t, ic, label]) => {
+    const items = direct.filter(([w]) => w.type === t);
+    if (items.length) html += `<div class="fsec"><h4 class="fsec-h"><span>📁</span> ${ic} ${label} <em>${items.length}</em></h4><div class="grid">${items.map(([w, i]) => cardHtml(w, i)).join('')}</div></div>`;
+  });
+
+  if (!html) html = `<div class="fempty"><span>📂</span><p>${FILTER === 'all'
+    ? 'This folder is empty for now. New work is coming soon.'
+    : 'Nothing of this kind in this folder yet.'}</p></div>`;
+
+  view.className = ''; void view.offsetWidth;                                         // restart the entrance animation
+  view.className = 'v-' + pick(['fade', 'up', 'zoom', 'left']);                       // a random entrance animation
+  view.innerHTML = html;
+  startCovers();
+}
+
+// Open a folder (p = "leo/wildlife", or "" for the top)
+function openFolder(p){
+  PATH = p ? p.split('/') : [];
+  render();
+  crumbs.scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+if (view){
+  view.addEventListener('click',   e => { const f = e.target.closest('.fold');   if (f) openFolder(f.dataset.p); });
+  crumbs.addEventListener('click', e => { const b = e.target.closest('button');  if (b) openFolder(b.dataset.p); });
+}
 
 // Filter buttons: All / Posts / Videos / Websites
 const filters = $('filters');
 if (filters) filters.addEventListener('click', e => {
   const b = e.target.closest('button'); if (!b) return;
   document.querySelectorAll('#filters button').forEach(x => x.classList.toggle('on', x === b));
-  grid.querySelectorAll('.card').forEach(c => c.classList.toggle('hide', b.dataset.f !== 'all' && c.dataset.t !== b.dataset.f));
+  FILTER = b.dataset.f;
+  render();
 });
+if (view) render();
 
 
 /* ---------- 3.6  Open-box viewer: the styles (looks) ---------- */
@@ -873,7 +1077,7 @@ vsc.addEventListener('scroll', () => {
 });
 
 // Click a card: websites open in a new tab, everything else opens in the box
-if (grid) grid.addEventListener('click', e => {
+if (view) view.addEventListener('click', e => {
   const card = e.target.closest('.card'); if (!card) return;
   const w = WORKS[card.dataset.i];
   if (w.type === 'web'){
@@ -881,7 +1085,7 @@ if (grid) grid.addEventListener('click', e => {
     if (/^https?:\/\//i.test(url)) window.open(url, '_blank', 'noopener,noreferrer');
     return;
   }
-  list = [...grid.querySelectorAll('.card:not(.hide)')]
+  list = [...view.querySelectorAll('.card')]
            .filter(c => WORKS[c.dataset.i].type !== 'web')
            .map(c => +c.dataset.i);
   show(list.indexOf(+card.dataset.i));
@@ -936,3 +1140,168 @@ const io = new IntersectionObserver(es => es.forEach(x => {
   io.unobserve(x.target);
 }), {threshold: .2});
 document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+
+/* =====================================================================
+   ACHIEVEMENTS + GOALS  (cards in the CV > Summary tab)
+   ONE card at a time:  text on the LEFT (types itself),  picture on the RIGHT.
+   You only edit the 2 lists (ACHIEVEMENTS and GOALS) and the 3 numbers under them.
+   ===================================================================== */
+(function () {
+
+  /* ---------- YOUR ACHIEVEMENTS: one line = one slide ----------
+     tag   small word on top          title / text  the words that type on the left
+     img   your picture (certificate or photo) shown on the RIGHT. Put the file in assets/achievements/
+           (small .jpg, under 500 KB).   Example:  img:"assets/achievements/prayama.jpg"
+           No picture yet? Write img:""  and the colour + icon shows instead.
+     icon  emoji          c  two background colours
+     TO ADD A NEW ONE: copy one line, change the words, put a comma after the line above it.   */
+  const ACHIEVEMENTS = [
+    {tag:"🏆 Award", title:"Best Project for Hunger", text:"Prayama 2.0, Leo Club of University of Kelaniya, Term 2024/25. I worked as PR & Marketing Coordinator.", img:"", icon:"🏆", c:["#ffc857","#b71c1c"]},
+    {tag:"⭐ Recognition", title:"LB Member of the Month: December", text:"Leo Club of University of Kelaniya, Term 2025/26.", img:"", icon:"⭐", c:["#6a1b9a","#ff3d6e"]},
+    {tag:"🎓 Certificate", title:"Graphic Design", text:"ICT Centre, University of Kelaniya, Jul 2026.", img:"", icon:"🎨", c:["#0288d1","#00695c"]},
+    {tag:"🎓 Certificate", title:"Information Technology", text:"ICT Centre, University of Kelaniya, Nov 2025.", img:"", icon:"💻", c:["#283593","#00838f"]},
+    {tag:"👏 Appreciation", title:"Certificate of Appreciation: LED KLN", text:"Organizing Team, University of Kelaniya.", img:"", icon:"👏", c:["#2e7d32","#ffd54f"]},
+    {tag:"🎤 Leadership", title:"Leadership Conference 2025", text:"Certificate of Participation.", img:"", icon:"🎤", c:["#ad1457","#ffc857"]}
+  ];
+
+  /* ---------- WHAT I WANT TO ACHIEVE: change the words to your own goals ---------- */
+  const GOALS = [
+    {title:"B.B.Mgt Digital Marketing (Honours)", text:"Finish my degree at the University of Kelaniya in 2028.", icon:"🎓", c:["#283593","#ad1457"]},
+    {title:"Diploma in ICT (DIT)", text:"Complete my diploma at IMBS Green Campus.", icon:"💻", c:["#00838f","#283593"]},
+    {title:"Grow in digital marketing", text:"Use my design, video and leadership skills in the digital marketing industry.", icon:"📈", c:["#2e7d32","#ffd54f"]},
+    {title:"Lead bigger projects", text:"Serve as Co-Director of Clean Water & Energy Conservation Avenue, 2026/27.", icon:"🌍", c:["#0288d1","#00695c"]}
+  ];
+
+  const SECONDS    = 5;                    // seconds a slide stays AFTER its words finished typing
+  const TITLE_TYPE = 45;                   // typing speed of the title   (milliseconds per letter, smaller = faster)
+  const TEXT_TYPE  = 18;                   // typing speed of the text under it
+  const ENTER = ['zoom', 'flip', 'slide', 'reveal', 'drop'];   // ways the picture COMES (names from the CSS)
+  const LEAVE = ['fade', 'left', 'zoom', 'spin'];              // ways the picture GOES (names from the CSS)
+
+  /* ---------- THE CODE (no need to change) ---------- */
+  const REDUCED = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const wait = ms => new Promise(r => setTimeout(r, ms));
+  const pad  = n => String(n).padStart(2, '0');
+  const other = (list, not) => { let v; do { v = pick(list); } while (list.length > 1 && v === not); return v; };   // random, never the same twice
+
+  // The picture on the right: colour + icon first, your image on top (blurred copy behind, so nothing is cut off)
+  function drawPic(box, it) {
+    box.innerHTML = '';
+    const st = document.createElement('div'); st.className = 'pic-stage';
+    const ic = document.createElement('span'); ic.className = 'pic-ico'; ic.textContent = it.icon; st.appendChild(ic);
+    if (it.img) ['pic-bg', 'pic-fg'].forEach(cls => {
+      const im = new Image(); im.className = cls; im.alt = cls === 'pic-fg' ? it.title : '';
+      im.onerror = () => st.querySelectorAll('img').forEach(x => x.remove());   // picture file missing -> the icon stays
+      im.src = it.img; st.appendChild(im);
+    });
+    const sh = document.createElement('span'); sh.className = 'pic-shine'; st.appendChild(sh);
+    box.appendChild(st);
+    ['tl', 'tr', 'bl', 'br'].forEach(c => { const k = document.createElement('i'); k.className = 'pic-c ' + c; box.appendChild(k); });
+  }
+
+  // Keeps the space of the full text, so the card does not jump while letters appear
+  function reserve(el, str) {
+    el.classList.remove('typing'); el.style.minHeight = '';
+    el.textContent = str; el.style.minHeight = el.offsetHeight + 'px'; el.textContent = '';
+  }
+
+  // The typing effect: one letter at a time. Stops by itself when a newer slide starts (id no longer matches)
+  async function typeInto(el, str, speed, id, isOld) {
+    if (REDUCED) { el.textContent = str; return; }
+    const letters = Array.from(str);
+    el.classList.add('typing');
+    for (let k = 1; k <= letters.length; k++) {
+      if (isOld(id)) return;
+      el.textContent = letters.slice(0, k).join('');
+      await wait(speed + (/[,.:]/.test(letters[k - 1]) ? 110 : 0));   // a short rest after , . :
+    }
+    el.classList.remove('typing');
+  }
+
+  // One card with its own timer, arrows and dots
+  function rotator(p, items) {
+    const card = $(p + 'Card'); if (!card || !items.length) return;
+    const el = {tag: $(p + 'Tag'), count: $(p + 'Count'), title: $(p + 'Title'), text: $(p + 'Text'),
+                pic: $(p + 'Pic'), time: $(p + 'Time'), prev: $(p + 'Prev'), next: $(p + 'Next'), dots: $(p + 'Dots')};
+    let now = -1, token = 0, leaving = false, typed = false, paused = false, inView = false, started = false, elapsed = 0, lastFx = '';
+    const isOld = id => id !== token;
+
+    el.dots.innerHTML = items.map((_, k) => `<button type="button" aria-label="Show ${k + 1}"></button>`).join('');
+    el.dots.querySelectorAll('button').forEach((d, k) => d.onclick = () => { if (k !== now) go(k); });
+    el.prev.onclick = () => go((now - 1 + items.length) % items.length);
+    el.next.onclick = () => go((now + 1) % items.length);
+
+    async function go(i) {
+      if (leaving) return;
+      const id = ++token;
+      typed = false; elapsed = 0; el.time.style.width = '0';
+
+      // GOING: the old slide leaves first
+      if (now >= 0 && !REDUCED) {
+        leaving = true;
+        card.dataset.out = other(LEAVE, card.dataset.out);
+        card.classList.add('is-out');
+        await wait(560);
+        leaving = false;
+        if (isOld(id)) return;
+      }
+
+      // COMING: the new slide arrives
+      card.classList.remove('is-out');
+      now = i; const it = items[i];
+      card.style.setProperty('--a1', it.c[0]); card.style.setProperty('--a2', it.c[1]);
+      lastFx = other(ENTER, lastFx); card.dataset.fx = lastFx;
+      drawPic(el.pic, it);
+      if (el.tag && it.tag) el.tag.textContent = it.tag;
+      el.count.innerHTML = `<b>${pad(i + 1)}</b> / ${pad(items.length)}`;
+      el.dots.querySelectorAll('button').forEach((d, k) => d.classList.toggle('on', k === i));
+
+      // HAPPENING: the words type themselves while the picture slowly moves
+      reserve(el.title, it.title); reserve(el.text, it.text);
+      await typeInto(el.title, it.title, TITLE_TYPE, id, isOld);
+      if (isOld(id)) return;
+      await wait(150);
+      await typeInto(el.text, it.text, TEXT_TYPE, id, isOld);
+      if (isOld(id)) return;
+      typed = true; elapsed = 0;
+    }
+
+    // Timer: counts only when the words are finished, the mouse is away, the tab is open and the card is on screen
+    setInterval(() => {
+      if (!typed || paused || leaving || document.hidden || !inView || card.offsetParent === null) return;
+      elapsed += 0.1;
+      el.time.style.width = Math.min(100, elapsed / SECONDS * 100) + '%';
+      if (elapsed >= SECONDS) go(other(items.map((_, k) => k), now));
+    }, 100);
+
+    card.addEventListener('mouseenter', () => paused = true);
+    card.addEventListener('mouseleave', () => paused = false);
+    card.addEventListener('focusin',    () => paused = true);
+    card.addEventListener('focusout',   () => paused = false);
+
+    // The first slide starts when the card is really seen (so the visitor sees the first animation)
+    new IntersectionObserver(es => es.forEach(x => {
+      inView = x.isIntersecting;
+      if (inView && !started) { started = true; go(Math.floor(Math.random() * items.length)); }
+    }), {threshold: .25}).observe(card);
+  }
+
+  rotator('ach',  ACHIEVEMENTS);
+  rotator('goal', GOALS);
+})();
+
+
+/* =====================================================================
+   FOOTER  (year, WhatsApp links, back-to-top buttons)
+   ===================================================================== */
+(function () {
+  document.querySelectorAll('[data-year]').forEach(n => n.textContent = new Date().getFullYear());
+  document.querySelectorAll('[data-wa]').forEach(a => a.href = 'https://wa.me/' + WHATSAPP_NUMBER);
+  const up = $('toTop'), top = () => window.scrollTo({top: 0, behavior: 'smooth'});
+  if ($('toTopBtn')) $('toTopBtn').onclick = top;
+  if (!up) return;
+  up.onclick = top;
+  const check = () => up.classList.toggle('show', window.scrollY > 700);
+  addEventListener('scroll', check, {passive: true}); check();
+})();
