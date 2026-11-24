@@ -152,9 +152,9 @@ const FOLDER_ICONS = {
 
   /* ---- folders inside Department ---- */
   "assignment":       "",            // Assignment
-  "talent-show":      "",            // Inbetween - Talent Show
-  "mpl":              "",            // MPL Cricket Tournament
-  "stylish-marketer": "",            // Stylish Marketer - Fashion Show
+  "talent-show":      "TS.png",            // Inbetween - Talent Show
+  "mpl":              "MPL.png",            // MPL Cricket Tournament
+  "stylish-marketer": "SM.png",            // Stylish Marketer - Fashion Show
   "other-design":     ""             // Other Design (inside Department)
 };
 
