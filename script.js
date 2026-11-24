@@ -146,7 +146,6 @@ const FOLDER_ICONS = {
 
   /* ---- folders inside LEO Club ---- */
   "clean-water":      "CW.png",            // Clean Water & Energy Conservation Avenue
-  "clean-water-2":    "",            // Clean Water & Energy Conservation Avenue 2
   "religion-culture": "R&C.png",            // Religion & Culture Avenue
   "wildlife":         "WL.png",            // Wildlife & Animal Conservation Avenue
 
