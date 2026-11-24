@@ -335,7 +335,7 @@ const WORKS = [
   {type:"video", title:"Stylish Maketer First Recap", note:"Event recap video", folder:"dept/stylish-marketer", file:"https://drive.google.com/file/d/1c1wEa2rqPzN_ZKb6xaKiCn8Saypt_QfO/view?usp=sharing", icon:"🎞️", c:["#4a148c","#ffc857"]},
 
   /* ----- WEBSITES (open in a new tab) ----- */
-  {type:"web", title:"Website Project 1", note:"Replace with your website link", file:"https://example.com", icon:"🌐", c:["#0d47a1","#00bcd4"]},
+  {type:"web", title:"Elora Website", note:"Move In Style", file:"https://elora.com.lk/", icon:"🌐", c:["#0d47a1","#00bcd4"]},
   {type:"web", title:"Website Project 2", note:"Replace with your website link", file:"https://example.com", icon:"💻", c:["#37474f","#ff3d6e"]}
 
   /* ADD A NEW WORK HERE: put a comma after the block above, then paste a template. */
