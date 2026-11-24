@@ -298,7 +298,7 @@ const WORKS = [
   /* ----- DESIGNS ----- */
   {type:"post", title:"Meetup Flyer", note:"Event flyer", file:"assets/works/2.png", icon:"🎨", c:["#ff3d6e","#6a1b9a"]},
   {type:"post", title:"Clean Water & Energy Avenue", note:"Leo Club campaign post", folder:"leo/clean-water", file:"assets/works/Clean Water and Energy Conservation avenue.png", icon:"💧", c:["#0288d1","#00695c"]},
-  {type:"post", title:"Leadership Body Announcement", note:"Countdown series (Open Soon / Open Now / Closed)", file:"assets/works/2.png", icon:"📣", c:["#ffc857","#b71c1c"]},
+  {type:"post", title:"Leadership Body Announcement", note:"Countdown series (Open Soon / Open Now / Closed)", folder:"leo/clean-water", file:"assets/works/2.png", icon:"📣", c:["#ffc857","#b71c1c"]},
 
   /* INVITATION: 3 pages, opens one by one from top to bottom, NO border, original design only.
      Save your 3 images in assets/works/ with these names (or change the names / paste links here).
@@ -321,17 +321,22 @@ const WORKS = [
    ],
    icon:"💍", c:["#8d6e63","#ffb74d"]},
 
-  {type:"post", title:"Nutrition Program Flyer", note:"Today / Tomorrow / Happening series", file:"assets/works/Final Today.jpg", icon:"🥗", c:["#2e7d32","#ffd54f"]},
+  {type:"post", title:"Nutrition Program Flyer", note:"Today / Tomorrow / Happening series", folder:"leo/wildlife", file:"assets/works/Final Today.jpg", icon:"🥗", c:["#2e7d32","#ffd54f"]},
   {type:"post", title:"Midori Jelly Label", note:"Product label and packaging design", file:"assets/works/Final NDP Under Lable.jpg", icon:"🍃", c:["#1b5e20","#9ccc65"]},
   {type:"post", title:"Polo T-shirt Mockup", note:"Free Polo Strip Collar mockup", file:"assets/works/Free Polo Strip Collar Mockup Template.jpg", icon:"👕", c:["#1a237e","#e53935"]},
+
+// other Design Adding One by One 
+   
+
+   
 
   /* ----- VIDEOS (16:9 + film-strip edge by default) ----- */
   /* This one is a Google Drive link. Drive > Share > "Anyone with the link" is required.
      If Drive keeps showing an error, upload the video to YouTube as "Unlisted" and paste that link instead. */
   {type:"video", title:"Ruviru BBV", note:"Brand video", file:"https://drive.google.com/file/d/17rGwr9Bf0vkJu0CUc5vTupWykUskaZ7f/view?usp=sharing", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
   {type:"video", title:"Entrepreneurship & Innovation", note:"Promo video",folder:"dept/assignment", file:"https://drive.google.com/file/d/1BHVgqdrcvWowr6rKAQal5D-9wmqj39z5/view?usp=sharing", icon:"💡", c:["#00838f","#283593"]},
-  {type:"video", title:"Coming Soon Teaser", note:"Event teaser video", file:"assets/works/Final Coming Soon Video.mp4", icon:"⏳", c:["#212121","#ff3d6e"]},
-  {type:"video", title:"Stylish Maketer First Recap", note:"Event recap video", file:"assets/works/Stylish Maketer First Recap Video.mp4", icon:"🎞️", c:["#4a148c","#ffc857"]},
+  {type:"video", title:"Coming Soon Teaser", note:"Event teaser video", folder:"leo/religion-culture", file:"assets/works/Final Coming Soon Video.mp4", icon:"⏳", c:["#212121","#ff3d6e"]},
+  {type:"video", title:"Stylish Maketer First Recap", note:"Event recap video", folder:"dept/stylish-marketer", file:"assets/works/Stylish Maketer First Recap Video.mp4", icon:"🎞️", c:["#4a148c","#ffc857"]},
 
   /* ----- WEBSITES (open in a new tab) ----- */
   {type:"web", title:"Website Project 1", note:"Replace with your website link", file:"https://example.com", icon:"🌐", c:["#0d47a1","#00bcd4"]},
