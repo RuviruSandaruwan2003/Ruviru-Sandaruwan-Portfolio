@@ -145,10 +145,10 @@ const FOLDER_ICONS = {
   "other":            "",            // Other Design        (put a file name here, e.g. "Other.png")
 
   /* ---- folders inside LEO Club ---- */
-  "clean-water":      "",            // Clean Water & Energy Conservation Avenue
+  "clean-water":      "CW.png",            // Clean Water & Energy Conservation Avenue
   "clean-water-2":    "",            // Clean Water & Energy Conservation Avenue 2
-  "religion-culture": "",            // Religion & Culture Avenue
-  "wildlife":         "",            // Wildlife & Animal Conservation Avenue
+  "religion-culture": "R&C.png",            // Religion & Culture Avenue
+  "wildlife":         "WL.png",            // Wildlife & Animal Conservation Avenue
 
   /* ---- folders inside Department ---- */
   "assignment":       "",            // Assignment
