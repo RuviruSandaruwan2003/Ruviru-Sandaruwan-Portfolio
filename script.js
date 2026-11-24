@@ -157,7 +157,7 @@ const SKILLS = [["Graphic Design",90],["Video Editing",88],["Adobe Photoshop",90
    Do NOT delete the folder with id "other".
    ===================================================================== */
 const FOLDERS = [
-  {id:"leo", name:"LEO Club", note:"Leo Club of University of Kelaniya", icon:"<img src="LEO.png">", c:["#ffc857","#b71c1c"], sub:[
+  {id:"leo", name:"LEO Club", note:"Leo Club of University of Kelaniya", icon:"LEO.png", c:["#ffc857","#b71c1c"], sub:[
     {id:"clean-water",      name:"Clean Water & Energy Conservation Avenue", note:"Projects and campaigns", icon:"💧", c:["#0288d1","#00695c"], sub:[
       {id:"clean-water-2",  name:"Clean Water & Energy Conservation Avenue 2", note:"More projects and campaigns", icon:"💧", c:["#0288d1","#00695c"]},
       {id:"clean-water-3",  name:"Clean Water & Energy Conservation Avenue 2", note:"More projects and campaigns", icon:"💧", c:["#0288d1","#00695c"]}
