@@ -129,8 +129,9 @@ const SKILLS = [["Graphic Design",90],["Video Editing",88],["Adobe Photoshop",90
    ONE BLOCK = ONE FOLDER.     "sub" = the folders inside it.
      id      short name, small letters, NO SPACES (use - instead).  Example: "clean-water-2"
      name    name shown on the folder card          note  small text under the name
-     icon    emoji (🦁)  OR  a picture file:  icon:"LEO.png"   c  two colours
-             (for a picture, put the file next to index.html and write its name - never write <img ...> here)
+     icon    emoji (🦁)  OR  a picture:  icon:"LEO.png"   (the file goes in  assets/icons/ )
+             or no change at all: save the picture as  assets/icons/<id>.png  (example: assets/icons/leo.png)
+             Never write <img ...> here. If the picture is missing, the emoji shows.   c  two colours
      covers  (optional) your own pictures for the folder card, e.g. covers:["assets/img/leo1.jpg"]
              If you do not write covers, the website takes pictures from the works inside the folder
              and changes them at random.
@@ -158,7 +159,7 @@ const SKILLS = [["Graphic Design",90],["Video Editing",88],["Adobe Photoshop",90
    Do NOT delete the folder with id "other".
    ===================================================================== */
 const FOLDERS = [
-  {id:"leo", name:"LEO Club", note:"Leo Club of University of Kelaniya", icon:"LEO.png", c:["#ffc857","#b71c1c"], sub:[
+  {id:"leo", name:"LEO Club", note:"Leo Club of University of Kelaniya", icon:"LEO.png", emoji:"🦁", c:["#ffc857","#b71c1c"], sub:[
     {id:"clean-water",      name:"Clean Water & Energy Conservation Avenue", note:"Projects and campaigns", icon:"💧", c:["#0288d1","#00695c"], sub:[
       {id:"clean-water-2",  name:"Clean Water & Energy Conservation Avenue 2", note:"More projects and campaigns", icon:"💧", c:["#0288d1","#00695c"]}
     ]},
@@ -566,13 +567,26 @@ function cardHtml(w, i){
   </button>`;
 }
 
-// Folder icon: an emoji (🦁) OR a picture file (LEO.png). A picture that cannot load just disappears.
-const iconHtml = ic => /\.(png|jpe?g|svg|webp|gif|avif)(\?.*)?$/i.test(String(ic || ''))
-  ? `<img class="ico-img" src="${esc(enc(ic))}" alt="" onerror="this.remove()">`
-  : (ic || '📁');
-
-// Size of a picture icon (added here, so style.css does not need any change)
-document.head.insertAdjacentHTML('beforeend', '<style>.fold-cover .ico-img{width:46%;max-height:70%;object-fit:contain;filter:drop-shadow(0 8px 18px rgba(0,0,0,.4))}</style>');
+/* Folder icon.  In FOLDERS you can write:
+     icon:"🦁"              an emoji.  (If a picture  assets/icons/<id>.png  exists, e.g. assets/icons/leo.png, it is used instead - automatic)
+     icon:"LEO.png"         a picture.  A name without "/" is looked for in  assets/icons/
+     icon:"assets/img/x.png"  a picture with its full path
+   The picture shows in the middle of the folder card, and as a round badge in the corner when the card shows work pictures.
+   If the picture file is missing, the emoji (or 📁) shows. Optional:  emoji:"🦁"  = the emoji used when the picture is missing. */
+const ICON_DIR = 'assets/icons/';
+const IMG_EXT  = /\.(png|jpe?g|svg|webp|gif|avif)(\?.*)?$/i;
+function iconInfo(f){
+  const ic = String(f.icon || '').trim();
+  if (IMG_EXT.test(ic)) return {src: (ic.includes('/') ? ic : ICON_DIR + ic), emoji: f.emoji || '📁'};
+  return {src: ICON_DIR + f.id + '.png', emoji: ic || '📁'};                    // emoji given: still try  assets/icons/<id>.png
+}
+function iconMain(f){            // big icon in the middle of the card
+  const i = iconInfo(f);
+  return `<img class="ico-img" src="${esc(enc(i.src))}" data-e="${esc(i.emoji)}" alt="" onerror="this.replaceWith(document.createTextNode(this.dataset.e))">`;
+}
+function iconBadge(f){           // small round badge in the corner (stays on top of the changing pictures)
+  return `<img class="fold-badge" src="${esc(enc(iconInfo(f).src))}" alt="" onerror="this.remove()">`;
+}
 
 // One folder card
 function folderCard(f, path){
@@ -585,7 +599,7 @@ function folderCard(f, path){
   if (!n.post && !n.video && !n.web && !(f.sub && f.sub.length)) bits.push('<b>Coming soon</b>');
   return `
   <button class="fold" data-p="${esc(path)}" style="--c1:${c[0]};--c2:${c[1]}">
-    <div class="fold-cover"><span class="ico">${iconHtml(f.icon)}</span></div>
+    <div class="fold-cover"><span class="ico">${iconMain(f)}</span>${iconBadge(f)}</div>
     <div class="fold-info"><h3>${f.name}</h3><p>${f.note || ''}</p><div class="fold-badges">${bits.join('')}</div></div>
   </button>`;
 }

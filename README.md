@@ -44,6 +44,12 @@ Open `FOLDERS` in `script.js`. Copy one block and give it a NEW `id` (small lett
 For a folder inside another folder, put `sub:[ ... ]` inside the parent block (see `clean-water` > `clean-water-2`).
 If the page goes blank: check the commas, the brackets `[ ]` `{ }`, and that the id has no spaces. Delete a folder = delete its block.
 
+### 3b-2. Folder ICONS (your own picture)
+Put the picture in `assets/icons/` (square .png, transparent background, under 200 KB).
+- **Way 1:** in `FOLDERS` write the file name: `icon:"LEO.png"` (capital letters must match). Example: `{id:"leo", name:"LEO Club", ..., icon:"LEO.png", emoji:"🦁", ...}`
+- **Way 2 (no code change):** save the picture with the folder id as its name: `leo.png`, `dept.png`, `other.png`, `wildlife.png`, `mpl.png` ... the website finds it by itself.
+`assets/icons/LEO.png` is only a SAMPLE: replace it with your own file (same name). The icon shows big in the middle of the card, and as a round badge in the corner when the card shows work pictures. A missing picture shows the emoji.
+
 ### 3c. Add a work  - වැඩක් එකතු කිරීම
 Find **PART 2** in `script.js`. One `{ ... },` block = one card. Copy a template from the notes there, change the words and the `file:` link, add `folder:"..."`.
 **Delete a work** = delete its whole block. No comma after the last block.

@@ -366,3 +366,11 @@ footer{padding:32px 0;text-align:center;color:var(--muted);border-top:1px solid 
 #toTop.show{opacity:1;transform:none;pointer-events:auto}
 #toTop:hover{background:var(--brand);border-color:var(--brand)}
 @media(max-width:820px){.foot-top{grid-template-columns:1fr;gap:34px}.foot-bottom{justify-content:center;text-align:center}}
+
+/* Folder icon as a picture (PNG / SVG) */
+.fold-cover .ico-img{width:46%;max-height:70%;object-fit:contain;filter:drop-shadow(0 8px 18px rgba(0,0,0,.4))}
+
+/* Folder badge (the round picture icon in the corner of a folder card) */
+.fold-badge{position:absolute;left:14px;bottom:14px;z-index:3;width:clamp(48px,22%,76px);aspect-ratio:1;object-fit:contain;padding:6px;border-radius:50%;background:rgba(11,16,32,.75);border:2px solid var(--brand2);box-shadow:0 8px 20px rgba(0,0,0,.45);transition:transform .35s}
+.fold:hover .fold-badge{transform:scale(1.12) rotate(-6deg)}
+.fold-cover:not(:has(img.cv)) .fold-badge{display:none}   /* no work pictures yet: only the big icon shows */
