@@ -22,7 +22,7 @@ const CV_FILE = "assets/Ruviru_Sandaruwan_CV.pdf";
 const CV_VERSION = 1;
 
 /* Photos on the home page (they change every few seconds). */
-const PHOTOS = ["assets/img/1.png", "assets/img/2.png, "assets/img/3.png, "assets/img/4.png, "assets/img/5.png, "assets/img/6.png];
+const PHOTOS = ["assets/img/1.png", "assets/img/2.png", "assets/img/3.png", "assets/img/4.png", "assets/img/5.png", "assets/img/6.png"];
 const PHOTO_SECONDS = 4;
 
 /* Words that type on the home page. */
@@ -159,7 +159,7 @@ const SKILLS = [["Graphic Design",90],["Video Editing",88],["Adobe Photoshop",90
    Do NOT delete the folder with id "other".
    ===================================================================== */
 const FOLDERS = [
-  {id:"leo", name:"LEO Club", note:"Leo Club of University of Kelaniya", icon:"LEO.png", emoji:"🦁", c:["#ffc857","#b71c1c"], sub:[
+  {id:"leo", name:"LEO Club", note:"Leo Club of University of Kelaniya", PHOTOS = "LEO.png", emoji:"🦁", c:["#ffc857","#b71c1c"], sub:[
     {id:"clean-water",      name:"Clean Water & Energy Conservation Avenue", note:"Projects and campaigns", icon:"💧", c:["#0288d1","#00695c"], sub:[
       {id:"clean-water-2",  name:"Clean Water & Energy Conservation Avenue 2", note:"More projects and campaigns", icon:"💧", c:["#0288d1","#00695c"]}
     ]},
