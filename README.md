@@ -59,6 +59,25 @@ All folder pictures live in ONE place: `FOLDER_ICONS` in `script.js` (just above
 Find **PART 2** in `script.js`. One `{ ... },` block = one card. Copy a template from the notes there, change the words and the `file:` link, add `folder:"..."`.
 **Delete a work** = delete its whole block. No comma after the last block.
 
+### 3d. EASY GUIDE - images and videos, by UPLOAD or by LINK
+Every work is one block in `WORKS` (`script.js`). `folder:"..."` chooses the folder. One folder can hold any number of images and videos.
+
+| I want | Write |
+|---|---|
+| Upload a small image | put it in `assets/works/`, then `file:"assets/works/photo.jpg"` |
+| Upload a small video | put it in `assets/works/`, then `file:"assets/works/video.mp4"` |
+| Big video | upload to YouTube (Unlisted), then `file:"https://youtu.be/XXXXXXXXXXX"` |
+| Image from Google Drive / Dropbox | `file:"https://drive.google.com/file/d/XXXX/view?usp=sharing"` |
+| Many images in ONE card | use `pages:[ "a.jpg", "https://...", "c.jpg" ]` instead of `file` |
+| Images + videos in ONE card | in `pages`, add `as:"video"` to the video items: `{file:"https://youtu.be/XXXX", as:"video"}` |
+
+Google Drive needs *Share > Anyone with the link*. Full copy-paste examples are in the **EASY GUIDE** comment just above `const WORKS` in `script.js`.
+
+### 3e. Achievement pictures and folder pictures: upload OR link
+- Achievements (CV > Summary): in `ACHIEVEMENTS` (end of `script.js`) write `img:"assets/achievements/award.jpg"` **or** `img:"https://drive.google.com/file/d/XXXX/view?usp=sharing"`.
+- Folder icons: in `FOLDER_ICONS` write a file name (`"LEO.png"`) **or** a link (`"https://..."`).
+- Empty folders are not kept by GitHub, so `assets/works/` and `assets/achievements/` each contain a small `README.txt`. Upload your files next to it.
+
 ## 4. Big files (GitHub does not accept files over ~25 MB)
 - **Video** -> upload to **YouTube**, Visibility = *Unlisted*, paste the link in `file:`. (fast, free, any size)
 - **Flyer** -> put it in `big-flyers/`, run `python shrink-images.py` (needs `pip install pillow`). Small .jpg files appear in `assets/works/`.

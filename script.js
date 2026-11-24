@@ -247,6 +247,55 @@ const FOLDERS = [
    ===================================================================== */
 
 
+/* =====================================================================
+   EASY GUIDE  -  ADD IMAGES AND VIDEOS  (two ways: UPLOAD or LINK)   <-- read this first
+   ---------------------------------------------------------------------
+   Every work = ONE block in WORKS below. Write  folder:"..."  to choose where it lives.
+   A folder can hold as many works as you like (images AND videos together).
+
+   WAY 1 - UPLOAD (small files only, GitHub limit ~25 MB)
+     Put the file in  assets/works/  (images: .jpg .png .webp   videos: .mp4 .webm)
+     then write its path:   file:"assets/works/my-photo.jpg"
+
+   WAY 2 - LINK (big files, GitHub cannot take them)
+     Video  -> YouTube (Unlisted) / Google Drive / Vimeo / Facebook / Instagram / TikTok link
+     Image  -> Google Drive / Dropbox / any direct image link
+     Just paste the normal share link:   file:"https://..."
+     Google Drive: Share > General access > "Anyone with the link".
+
+   ONE IMAGE or ONE VIDEO in a folder:
+     {type:"post",  title:"Poster",  note:"Leo Club", folder:"leo", file:"assets/works/poster.jpg", icon:"🎨", c:["#ff3d6e","#6a1b9a"]},
+     {type:"video", title:"Promo",   note:"Leo Club", folder:"leo", file:"https://youtu.be/XXXXXXXXXXX", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
+
+   MANY IMAGES (or many videos) inside ONE card - they open one after another, top to bottom.
+   Mix upload + link in the same list if you want:
+     {type:"post", title:"Event Photos", note:"5 photos", folder:"mpl", border:"none",
+      pages:[
+        "assets/works/photo-1.jpg",
+        "https://drive.google.com/file/d/XXXXXXXX/view?usp=sharing",
+        {file:"https://www.dropbox.com/s/xxxx/photo-3.jpg?dl=0", label:"Photo 3"}
+      ],
+      icon:"📷", c:["#1b5e20","#9ccc65"]},
+
+   IMAGES + VIDEOS TOGETHER in ONE card (add  as:"video"  to the video pages):
+     {type:"post", title:"Full Event", note:"Photos and videos", folder:"wildlife",
+      pages:[
+        "assets/works/day-1.jpg",
+        {file:"https://youtu.be/XXXXXXXXXXX", as:"video", label:"Opening video"},
+        {file:"assets/works/recap.mp4", as:"video", label:"Recap"}
+      ],
+      icon:"🐘", c:["#2e7d32","#ffd54f"]},
+
+   A Google Drive link is a VIDEO but the card says "post"?  Add  as:"video"  to that page (or make the card type:"video").
+   Photo not showing from a link?  Check the sharing is "Anyone with the link", or upload a small .jpg instead.
+
+   ACHIEVEMENT PICTURES (CV > Summary tab) - at the END of this file, in ACHIEVEMENTS:
+     img:"assets/achievements/award.jpg"                      (upload)
+     img:"https://drive.google.com/file/d/XXXX/view?usp=sharing"   (link)
+
+   FOLDER PICTURES: in FOLDER_ICONS you can write a file name ("LEO.png") OR a link ("https://...").
+   ===================================================================== */
+
 const WORKS = [
 
   /* ----- DESIGNS ----- */
@@ -268,7 +317,12 @@ const WORKS = [
   /* WEDDING CARD: NO border, original design only.
      More pages?  Use:  pages:["assets/works/weding Card Sinhala Final.jpg", "assets/works/wedding-2.jpg"]  instead of file */
   {type:"post", title:"Wedding Card (Sinhala)", note:"Print-ready card", border:"none",
-   file:"assets/works/weding Card Sinhala Final.jpg", icon:"💍", c:["#8d6e63","#ffb74d"]},
+    pages:[
+      {file:"https://drive.google.com/file/d/1wDc0LqTofy-5YMdysrVaVt9E8BOwzJP3/view?usp=sharing", label:"Front Page"},
+     {file:"https://drive.google.com/file/d/1wDc0LqTofy-5YMdysrVaVt9E8BOwzJP3/view?usp=sharing", label:"Details Page"},
+     {file:"https://drive.google.com/file/d/1wDc0LqTofy-5YMdysrVaVt9E8BOwzJP3/view?usp=sharing", label:"Back Page"}
+   ],
+   icon:"💍", c:["#8d6e63","#ffb74d"]},
 
   {type:"post", title:"Nutrition Program Flyer", note:"Today / Tomorrow / Happening series", file:"assets/works/Final Today.jpg", icon:"🥗", c:["#2e7d32","#ffd54f"]},
   {type:"post", title:"Midori Jelly Label", note:"Product label and packaging design", file:"assets/works/Final NDP Under Lable.jpg", icon:"🍃", c:["#1b5e20","#9ccc65"]},
@@ -277,8 +331,8 @@ const WORKS = [
   /* ----- VIDEOS (16:9 + film-strip edge by default) ----- */
   /* This one is a Google Drive link. Drive > Share > "Anyone with the link" is required.
      If Drive keeps showing an error, upload the video to YouTube as "Unlisted" and paste that link instead. */
-  {type:"video", title:"Ruviru BBV", note:"Brand video", file:"https://drive.google.com/file/d/1QQ_c0DDu2Z0t5GKykJFYRNV3UBsyb9Gt/view?usp=sharing", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
-  {type:"video", title:"Entrepreneurship & Innovation", note:"Promo video", file:"assets/works/Audition 2.mp4", icon:"💡", c:["#00838f","#283593"]},
+  {type:"video", title:"Ruviru BBV", note:"Brand video", file:"https://drive.google.com/file/d/17rGwr9Bf0vkJu0CUc5vTupWykUskaZ7f/view?usp=sharing", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
+  {type:"video", title:"Entrepreneurship & Innovation", note:"Promo video",folder:"dept/assignment", file:"https://drive.google.com/file/d/1BHVgqdrcvWowr6rKAQal5D-9wmqj39z5/view?usp=sharing", icon:"💡", c:["#00838f","#283593"]},
   {type:"video", title:"Coming Soon Teaser", note:"Event teaser video", file:"assets/works/Final Coming Soon Video.mp4", icon:"⏳", c:["#212121","#ff3d6e"]},
   {type:"video", title:"Stylish Maketer First Recap", note:"Event recap video", file:"assets/works/Stylish Maketer First Recap Video.mp4", icon:"🎞️", c:["#4a148c","#ffc857"]},
 
@@ -305,6 +359,15 @@ const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>'
 
 // Makes a file path safe for the browser (spaces become %20). Safe to use twice.
 const enc = f => { try { return encodeURI(decodeURI(f)); } catch (e) { return encodeURI(f); } };
+
+// Turns ANY picture link (Google Drive, Dropbox, direct link) or own file path into an address a <img> can show.
+// Your own file paths are returned unchanged. Used by achievements, folder icons and folder covers.
+function imgUrl(u){
+  u = String(u || '').trim();
+  if (!/^https?:\/\//i.test(u)) return u;
+  const r = resolveLink(u, 'post');
+  return (r.kind === 'image' && r.src) ? r.src : u;
+}
 
 // Random helpers (used by the animated background)
 const rnd  = (a, b) => a + Math.random() * (b - a);
@@ -582,7 +645,7 @@ function thumbImg(w){
 // All pictures that can be shown on a folder card (your "covers" + pictures of the works inside)
 function coverSrcs(path){
   const node = findFolder(path.split('/'));
-  const out  = ((node && node.covers) || []).slice();
+  const out  = ((node && node.covers) || []).map(imgUrl);
   WORKS.forEach(w => {
     if (!inFolder(w, path) || w.type === 'web') return;
     let src = thumbSrc(w);
@@ -618,10 +681,11 @@ function iconInfo(f){
   //   1) FOLDER_ICONS (the list above)   2) icon:"x.png" inside the FOLDERS block   3) assets/icons/<id>.png (automatic)   4) emoji
   const ic    = String(f.icon || '').trim();
   const pic   = String((typeof FOLDER_ICONS === 'object' && FOLDER_ICONS[f.id]) || '').trim();
-  const emoji = IMG_EXT.test(ic) ? (f.emoji || '📁') : (ic || '📁');
-  const path  = n => (n.includes('/') ? n : ICON_DIR + n);                    // no "/" in the name = look in assets/icons/
-  if (IMG_EXT.test(pic)) return {src: path(pic), emoji};
-  if (IMG_EXT.test(ic))  return {src: path(ic),  emoji};
+  const isPic = n => IMG_EXT.test(n) || /^https?:\/\//i.test(n);              // a file name OR a web link (Drive, Dropbox ...)
+  const emoji = isPic(ic) ? (f.emoji || '📁') : (ic || '📁');
+  const path  = n => (/^https?:\/\//i.test(n) ? imgUrl(n) : n.includes('/') ? n : ICON_DIR + n);   // no "/" in the name = look in assets/icons/
+  if (isPic(pic)) return {src: path(pic), emoji};
+  if (isPic(ic))  return {src: path(ic),  emoji};
   return {src: ICON_DIR + f.id + '.png', emoji};
 }
 function iconMain(f){            // big icon in the middle of the card
@@ -1220,11 +1284,13 @@ document.querySelectorAll('.rv').forEach(el => io.observe(el));
      tag   small word on top          title / text  the words that type on the left
      img   your picture (certificate or photo) shown on the RIGHT. Put the file in assets/achievements/
            (small .jpg, under 500 KB).   Example:  img:"assets/achievements/prayama.jpg"
+           OR paste a LINK instead of a file:  img:"https://drive.google.com/file/d/XXXX/view?usp=sharing"
+           (Google Drive "Anyone with the link", Dropbox, or any direct .jpg/.png link all work).
            No picture yet? Write img:""  and the colour + icon shows instead.
      icon  emoji          c  two background colours
      TO ADD A NEW ONE: copy one line, change the words, put a comma after the line above it.   */
   const ACHIEVEMENTS = [
-    {tag:"🏆 Award", title:"Best Project for Hunger", text:"Prayama 2.0, Leo Club of University of Kelaniya, Term 2024/25. I worked as PR & Marketing Coordinator.", img:"", icon:"🏆", c:["#ffc857","#b71c1c"]},
+    {tag:"🏆 Award", title:"Best Project for Hunger", text:"Prayama 2.0, Leo Club of University of Kelaniya, Term 2024/25. I worked as PR & Marketing Coordinator.", img:"assets/achievements/BP01.png", icon:"🏆", c:["#ffc857","#b71c1c"]},
     {tag:"⭐ Recognition", title:"LB Member of the Month: December", text:"Leo Club of University of Kelaniya, Term 2025/26.", img:"", icon:"⭐", c:["#6a1b9a","#ff3d6e"]},
     {tag:"🎓 Certificate", title:"Graphic Design", text:"ICT Centre, University of Kelaniya, Jul 2026.", img:"", icon:"🎨", c:["#0288d1","#00695c"]},
     {tag:"🎓 Certificate", title:"Information Technology", text:"ICT Centre, University of Kelaniya, Nov 2025.", img:"", icon:"💻", c:["#283593","#00838f"]},
@@ -1234,10 +1300,10 @@ document.querySelectorAll('.rv').forEach(el => io.observe(el));
 
   /* ---------- WHAT I WANT TO ACHIEVE: change the words to your own goals ---------- */
   const GOALS = [
-    {title:"B.B.Mgt Digital Marketing (Honours)", text:"Finish my degree at the University of Kelaniya in 2028.", icon:"🎓", c:["#283593","#ad1457"]},
-    {title:"Diploma in ICT (DIT)", text:"Complete my diploma at IMBS Green Campus.", icon:"💻", c:["#00838f","#283593"]},
-    {title:"Grow in digital marketing", text:"Use my design, video and leadership skills in the digital marketing industry.", icon:"📈", c:["#2e7d32","#ffd54f"]},
-    {title:"Lead bigger projects", text:"Serve as Co-Director of Clean Water & Energy Conservation Avenue, 2026/27.", icon:"🌍", c:["#0288d1","#00695c"]}
+    {title:"B.B.Mgt Digital Marketing (Honours)", text:"Finish my degree at the University of Kelaniya in 2028.",img:"assets/achievements/DH.png", icon:"🎓", c:["#283593","#ad1457"]},
+    {title:"Diploma in ICT (DIT)", text:"Complete my diploma at IMBS Green Campus.", img:"assets/achievements/IMBS.png", icon:"💻", c:["#00838f","#283593"]},
+    {title:"Grow in digital marketing", text:"Use my design, video and leadership skills in the digital marketing industry.",img:"assets/achievements/DM.png", icon:"📈", c:["#2e7d32","#ffd54f"]},
+    {title:"Lead bigger projects", text:"Serve as Co-Director of Clean Water & Energy Conservation Avenue, 2026/27.", img:"assets/achievements/BP03.png", icon:"🌍", c:["#0288d1","#00695c"]}
   ];
 
   const SECONDS    = 5;                    // seconds a slide stays AFTER its words finished typing
@@ -1259,8 +1325,9 @@ document.querySelectorAll('.rv').forEach(el => io.observe(el));
     const ic = document.createElement('span'); ic.className = 'pic-ico'; ic.textContent = it.icon; st.appendChild(ic);
     if (it.img) ['pic-bg', 'pic-fg'].forEach(cls => {
       const im = new Image(); im.className = cls; im.alt = cls === 'pic-fg' ? it.title : '';
-      im.onerror = () => st.querySelectorAll('img').forEach(x => x.remove());   // picture file missing -> the icon stays
-      im.src = it.img; st.appendChild(im);
+      im.referrerPolicy = 'no-referrer';                                         // needed for some link hosts (Google Drive)
+      im.onerror = () => st.querySelectorAll('img').forEach(x => x.remove());   // picture file / link missing -> the icon stays
+      im.src = enc(imgUrl(it.img)); st.appendChild(im);                          // img can be a file path OR a link
     });
     const sh = document.createElement('span'); sh.className = 'pic-shine'; st.appendChild(sh);
     box.appendChild(st);
