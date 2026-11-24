@@ -336,7 +336,7 @@ const WORKS = [
 
   /* ----- WEBSITES (open in a new tab) ----- */
   {type:"web", title:"Elora Website", note:"Move In Style", file:"https://elora.com.lk/", icon:"🌐", c:["#0d47a1","#00bcd4"]},
-  {type:"web", title:"Website Project 2", note:"Replace with your website link", file:"https://example.com", icon:"💻", c:["#37474f","#ff3d6e"]}
+  {type:"web", title:"SLIIT website", note:"Project Of IMBS", file:"https://drive.google.com/drive/folders/1_JkdAOZb-q9DFbgUjzImhIIJZtq5dGsd?usp=sharing", icon:"💻", c:["#37474f","#ff3d6e"]}
 
   /* ADD A NEW WORK HERE: put a comma after the block above, then paste a template. */
 ];
