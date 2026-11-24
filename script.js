@@ -198,8 +198,7 @@ const SHOW_WORK_PICTURES = false;
    ===================================================================== */
 const FOLDERS = [
   {id:"leo", name:"LEO Club", note:"Leo Club of University of Kelaniya", icon:"🦁", c:["#ffc857","#b71c1c"], sub:[
-    {id:"clean-water",      name:"Clean Water & Energy Conservation Avenue", note:"Projects and campaigns", icon:"💧", c:["#0288d1","#00695c"], sub:[
-      {id:"clean-water-2",  name:"Clean Water & Energy Conservation Avenue 2", note:"More projects and campaigns", icon:"💧", c:["#0288d1","#00695c"]}
+    {id:"clean-water",      name:"Clean Water & Energy Conservation Avenue", note:"Projects and campaigns", icon:"💧", c:["#0288d1","#00695c"],
     ]},
     {id:"religion-culture", name:"Religion & Culture Avenue",                note:"Dirgayu, Ekaloka and more", icon:"🪷", c:["#ad1457","#ffc857"]},
     {id:"wildlife",         name:"Wildlife & Animal Conservation Avenue",    note:"Prayama 2.0 and more", icon:"🐘", c:["#2e7d32","#ffd54f"]}
