@@ -296,34 +296,30 @@ const FOLDERS = [
 const WORKS = [
 
   /* ----- DESIGNS ----- */
-  {type:"post", title:"Meetup Flyer", note:"Event flyer", file:"assets/works/2.png", icon:"🎨", c:["#ff3d6e","#6a1b9a"]},
-  {type:"post", title:"Clean Water & Energy Avenue", note:"Leo Club campaign post", folder:"leo/clean-water", file:"assets/works/Clean Water and Energy Conservation avenue.png", icon:"💧", c:["#0288d1","#00695c"]},
-  {type:"post", title:"Leadership Body Announcement", note:"Countdown series (Open Soon / Open Now / Closed)", folder:"leo/clean-water", file:"assets/works/2.png", icon:"📣", c:["#ffc857","#b71c1c"]},
+  {type:"post", title:"Meetup Flyer", note:"Event flyer", file:"https://drive.google.com/file/d/1ICpTJ5oD5YvvdGT-UR5uSLhz-18Cwh_y/view?usp=sharing", icon:"🎨", c:["#ff3d6e","#6a1b9a"]},
+  {type:"post", title:"Clean Water & Energy Avenue", note:"Leo Club campaign post", folder:"leo/clean-water", file:"https://drive.google.com/file/d/1JMGZENJEcMS3loxmX2lNHm1uVn8BMEW_/view?usp=sharing", icon:"💧", c:["#0288d1","#00695c"]},
+  {type:"post", title:"Leadership Body Announcement", note:"Countdown series (Open Soon / Open Now / Closed)", folder:"leo/clean-water", file:"https://drive.google.com/file/d/1eqnRsP8MidEX7UDy5TD0qgZyQeymH-Ch/view?usp=sharing", icon:"📣", c:["#ffc857","#b71c1c"]},
 
   /* INVITATION: 3 pages, opens one by one from top to bottom, NO border, original design only.
      Save your 3 images in assets/works/ with these names (or change the names / paste links here).
      Only 1 image?  Delete the other two "{file:...}" lines. */
-  {type:"post", title:"Invitation", note:"Formal invitation design", border:"none",
-   pages:[
-     {file:"assets/works/invitation-1.png", label:"Front Page"},
-     {file:"assets/works/invitation-2.png", label:"Details Page"},
-     {file:"assets/works/invitation-3.png", label:"Back Page"}
-   ],
-   icon:"💌", c:["#283593","#ad1457"]},
+  {type:"post", title:"Invitation", folder:"dept/talent-show", note:"Formal invitation design", border:"none",
+   pages:[{file:"https://drive.google.com/file/d/1Z_ZSMigl8L3ZCE5kLXVZft5C-18gqzZC/view?usp=sharing", label:"Front Page"}],icon:"💌", c:["#283593","#ad1457"]},
+    {type:"post", title:"Invitation", folder:"dept/stylish-marketer", note:"Formal invitation design", border:"none",
+   pages:[{file:"https://drive.google.com/file/d/1SotCD7u21WDhKkWkT2q9gLlYli-TCMrE/view?usp=sharing", label:"Front Page"}],icon:"💌", c:["#283593","#ad1457"]},
 
   /* WEDDING CARD: NO border, original design only.
      More pages?  Use:  pages:["assets/works/weding Card Sinhala Final.jpg", "assets/works/wedding-2.jpg"]  instead of file */
-  {type:"post", title:"Wedding Card (Sinhala)", note:"Print-ready card", border:"none",
+  {type:"post", title:"Wedding Card (Sinhala & English)", note:"Print-ready card", border:"none",
     pages:[
       {file:"https://drive.google.com/file/d/1wDc0LqTofy-5YMdysrVaVt9E8BOwzJP3/view?usp=sharing", label:"Front Page"},
-     {file:"https://drive.google.com/file/d/1wDc0LqTofy-5YMdysrVaVt9E8BOwzJP3/view?usp=sharing", label:"Details Page"},
-     {file:"https://drive.google.com/file/d/1wDc0LqTofy-5YMdysrVaVt9E8BOwzJP3/view?usp=sharing", label:"Back Page"}
+     {file:"https://drive.google.com/file/d/16sY4Yh2tOkrJ2M96zM1eH6KStxdfGCya/view?usp=sharing", label:"Back Page"}
    ],
    icon:"💍", c:["#8d6e63","#ffb74d"]},
 
-  {type:"post", title:"Nutrition Program Flyer", note:"Today / Tomorrow / Happening series", folder:"leo/wildlife", file:"assets/works/Final Today.jpg", icon:"🥗", c:["#2e7d32","#ffd54f"]},
-  {type:"post", title:"Midori Jelly Label", note:"Product label and packaging design", file:"assets/works/Final NDP Under Lable.jpg", icon:"🍃", c:["#1b5e20","#9ccc65"]},
-  {type:"post", title:"Polo T-shirt Mockup", note:"Free Polo Strip Collar mockup", file:"assets/works/Free Polo Strip Collar Mockup Template.jpg", icon:"👕", c:["#1a237e","#e53935"]},
+  {type:"post", title:"Nutrition Program Flyer", note:"Today / Tomorrow / Happening series", folder:"leo/wildlife", file:"https://drive.google.com/file/d/103S6auBwvtUIlcXC8CB7hb5iSy55OTjC/view?usp=sharing", icon:"🥗", c:["#2e7d32","#ffd54f"]},
+  {type:"post", title:"Midori Jelly Label", note:"Product label and packaging design", folder:"dept/assignment", file:"https://drive.google.com/file/d/1GEc_Z_DffOznlt_O4L_8i6EEejNmnMZ8/view?usp=sharing", icon:"🍃", c:["#1b5e20","#9ccc65"]},
+  {type:"post", title:"Polo T-shirt Mockup", note:"Free Polo Strip Collar mockup",  folder:"dept/other-design", file:"https://drive.google.com/file/d/11YOBgQSvYu2SmAgkUab1q7eaYGFvRY00/view?usp=sharing", icon:"👕", c:["#1a237e","#e53935"]},
 
 // other Design Adding One by One 
    
@@ -335,8 +331,8 @@ const WORKS = [
      If Drive keeps showing an error, upload the video to YouTube as "Unlisted" and paste that link instead. */
   {type:"video", title:"Ruviru BBV", note:"Brand video", file:"https://drive.google.com/file/d/17rGwr9Bf0vkJu0CUc5vTupWykUskaZ7f/view?usp=sharing", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
   {type:"video", title:"Entrepreneurship & Innovation", note:"Promo video",folder:"dept/assignment", file:"https://drive.google.com/file/d/1BHVgqdrcvWowr6rKAQal5D-9wmqj39z5/view?usp=sharing", icon:"💡", c:["#00838f","#283593"]},
-  {type:"video", title:"Coming Soon Teaser", note:"Event teaser video", folder:"leo/religion-culture", file:"assets/works/Final Coming Soon Video.mp4", icon:"⏳", c:["#212121","#ff3d6e"]},
-  {type:"video", title:"Stylish Maketer First Recap", note:"Event recap video", folder:"dept/stylish-marketer", file:"assets/works/Stylish Maketer First Recap Video.mp4", icon:"🎞️", c:["#4a148c","#ffc857"]},
+  {type:"video", title:"Coming Soon Teaser", note:"Event teaser video", folder:"leo/religion-culture", file:"https://drive.google.com/file/d/1Euiy74GX6sPs2tRKLvYWV4teABLa0CIE/view?usp=sharing", icon:"⏳", c:["#212121","#ff3d6e"]},
+  {type:"video", title:"Stylish Maketer First Recap", note:"Event recap video", folder:"dept/stylish-marketer", file:"https://drive.google.com/file/d/1c1wEa2rqPzN_ZKb6xaKiCn8Saypt_QfO/view?usp=sharing", icon:"🎞️", c:["#4a148c","#ffc857"]},
 
   /* ----- WEBSITES (open in a new tab) ----- */
   {type:"web", title:"Website Project 1", note:"Replace with your website link", file:"https://example.com", icon:"🌐", c:["#0d47a1","#00bcd4"]},
