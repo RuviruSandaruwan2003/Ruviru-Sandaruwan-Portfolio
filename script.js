@@ -142,7 +142,7 @@ const FOLDER_ICONS = {
   /* ---- the 3 main folders ---- */
   "leo":              "LEO.png",     // LEO Club
   "dept":             "DMM.png",     // Department of Marketing Management
-  "other":            "",            // Other Design        (put a file name here, e.g. "Other.png")
+  "other":            "Other.png",            // Other Design        (put a file name here, e.g. "Other.png")
 
   /* ---- folders inside LEO Club ---- */
   "clean-water":      "CW.png",            // Clean Water & Energy Conservation Avenue
@@ -151,11 +151,11 @@ const FOLDER_ICONS = {
   "wildlife":         "WL.png",            // Wildlife & Animal Conservation Avenue
 
   /* ---- folders inside Department ---- */
-  "assignment":       "",            // Assignment
-  "talent-show":      "TS1.png",            // Inbetween - Talent Show
-  "mpl":              "MPL1.png",            // MPL Cricket Tournament
-  "stylish-marketer": "SM1.png",            // Stylish Marketer - Fashion Show
-  "other-design":     ""             // Other Design (inside Department)
+  "assignment":       "ASG.png",            // Assignment
+  "talent-show":      "TS2.png",            // Inbetween - Talent Show
+  "mpl":              "MPL2.png",            // MPL Cricket Tournament
+  "stylish-marketer": "SM2.png",            // Stylish Marketer - Fashion Show
+  "other-design":     "DOD.png"             // Other Design (inside Department)
 };
 
 /* Folder cards: what do they show?
