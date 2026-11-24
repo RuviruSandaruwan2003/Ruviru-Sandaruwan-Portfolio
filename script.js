@@ -129,7 +129,8 @@ const SKILLS = [["Graphic Design",90],["Video Editing",88],["Adobe Photoshop",90
    ONE BLOCK = ONE FOLDER.     "sub" = the folders inside it.
      id      short name, small letters, NO SPACES (use - instead).  Example: "clean-water-2"
      name    name shown on the folder card          note  small text under the name
-     icon    emoji                                  c     two colours
+     icon    emoji (🦁)  OR  a picture file:  icon:"LEO.png"   c  two colours
+             (for a picture, put the file next to index.html and write its name - never write <img ...> here)
      covers  (optional) your own pictures for the folder card, e.g. covers:["assets/img/leo1.jpg"]
              If you do not write covers, the website takes pictures from the works inside the folder
              and changes them at random.
@@ -159,8 +160,7 @@ const SKILLS = [["Graphic Design",90],["Video Editing",88],["Adobe Photoshop",90
 const FOLDERS = [
   {id:"leo", name:"LEO Club", note:"Leo Club of University of Kelaniya", icon:"LEO.png", c:["#ffc857","#b71c1c"], sub:[
     {id:"clean-water",      name:"Clean Water & Energy Conservation Avenue", note:"Projects and campaigns", icon:"💧", c:["#0288d1","#00695c"], sub:[
-      {id:"clean-water-2",  name:"Clean Water & Energy Conservation Avenue 2", note:"More projects and campaigns", icon:"💧", c:["#0288d1","#00695c"]},
-      {id:"clean-water-3",  name:"Clean Water & Energy Conservation Avenue 2", note:"More projects and campaigns", icon:"💧", c:["#0288d1","#00695c"]}
+      {id:"clean-water-2",  name:"Clean Water & Energy Conservation Avenue 2", note:"More projects and campaigns", icon:"💧", c:["#0288d1","#00695c"]}
     ]},
     {id:"religion-culture", name:"Religion & Culture Avenue",                note:"Dirgayu, Ekaloka and more", icon:"🪷", c:["#ad1457","#ffc857"]},
     {id:"wildlife",         name:"Wildlife & Animal Conservation Avenue",    note:"Prayama 2.0 and more", icon:"🐘", c:["#2e7d32","#ffd54f"]}
@@ -212,7 +212,7 @@ const WORKS = [
 
   /* ----- DESIGNS ----- */
   {type:"post", title:"Meetup Flyer", note:"Event flyer", file:"assets/works/2.png", icon:"🎨", c:["#ff3d6e","#6a1b9a"]},
-  {type:"post", title:"Clean Water & Energy Avenue", note:"Leo Club campaign post", folder:"leo/clean-water/clean-water-2", file:"assets/works/Clean Water and Energy Conservation avenue.png", icon:"💧", c:["#0288d1","#00695c"]},
+  {type:"post", title:"Clean Water & Energy Avenue", note:"Leo Club campaign post", folder:"leo/clean-water", file:"assets/works/Clean Water and Energy Conservation avenue.png", icon:"💧", c:["#0288d1","#00695c"]},
   {type:"post", title:"Leadership Body Announcement", note:"Countdown series (Open Soon / Open Now / Closed)", file:"assets/works/2.png", icon:"📣", c:["#ffc857","#b71c1c"]},
 
   /* INVITATION: 3 pages, opens one by one from top to bottom, NO border, original design only.
@@ -566,6 +566,14 @@ function cardHtml(w, i){
   </button>`;
 }
 
+// Folder icon: an emoji (🦁) OR a picture file (LEO.png). A picture that cannot load just disappears.
+const iconHtml = ic => /\.(png|jpe?g|svg|webp|gif|avif)(\?.*)?$/i.test(String(ic || ''))
+  ? `<img class="ico-img" src="${esc(enc(ic))}" alt="" onerror="this.remove()">`
+  : (ic || '📁');
+
+// Size of a picture icon (added here, so style.css does not need any change)
+document.head.insertAdjacentHTML('beforeend', '<style>.fold-cover .ico-img{width:46%;max-height:70%;object-fit:contain;filter:drop-shadow(0 8px 18px rgba(0,0,0,.4))}</style>');
+
 // One folder card
 function folderCard(f, path){
   const n = countIn(path), c = f.c || ['#283593', '#ad1457'];
@@ -577,7 +585,7 @@ function folderCard(f, path){
   if (!n.post && !n.video && !n.web && !(f.sub && f.sub.length)) bits.push('<b>Coming soon</b>');
   return `
   <button class="fold" data-p="${esc(path)}" style="--c1:${c[0]};--c2:${c[1]}">
-    <div class="fold-cover"><span class="ico">${f.icon || '📁'}</span></div>
+    <div class="fold-cover"><span class="ico">${iconHtml(f.icon)}</span></div>
     <div class="fold-info"><h3>${f.name}</h3><p>${f.note || ''}</p><div class="fold-badges">${bits.join('')}</div></div>
   </button>`;
 }
