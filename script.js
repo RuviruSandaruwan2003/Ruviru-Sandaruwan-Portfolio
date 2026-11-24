@@ -125,13 +125,51 @@ const SKILLS = [["Graphic Design",90],["Video Editing",88],["Adobe Photoshop",90
    RULES:  keep every path / link inside quotes " "  -  put a comma after each block (not after the last one).
    ===================================================================== */
 /* =====================================================================
+   FOLDER ICONS  -  CHANGE THE PICTURE OF ANY FOLDER HERE   (the easiest place)
+   ---------------------------------------------------------------------
+   STEP 1  Put your picture in the folder   assets/icons/
+           (a .png with a transparent background is best. Keep it under 200 KB.)
+   STEP 2  Write its file name after the folder name below, inside quotes.
+   STEP 3  Save and refresh the website.  That is all.
+
+   To change a picture later: put the NEW file in assets/icons/ and change the file name here.
+   Or keep the same file name and just replace the old file (then nothing here changes).
+   Write ""  (two quotes, nothing inside) = no picture, the little emoji of the folder shows.
+   Capital and small letters must match the real file name:  "LEO.png"  is not  "leo.png".
+   Keep a comma after every line except the last one.
+   ===================================================================== */
+const FOLDER_ICONS = {
+  /* ---- the 3 main folders ---- */
+  "leo":              "LEO.png",     // LEO Club
+  "dept":             "DMM.png",     // Department of Marketing Management
+  "other":            "",            // Other Design        (put a file name here, e.g. "Other.png")
+
+  /* ---- folders inside LEO Club ---- */
+  "clean-water":      "",            // Clean Water & Energy Conservation Avenue
+  "clean-water-2":    "",            // Clean Water & Energy Conservation Avenue 2
+  "religion-culture": "",            // Religion & Culture Avenue
+  "wildlife":         "",            // Wildlife & Animal Conservation Avenue
+
+  /* ---- folders inside Department ---- */
+  "assignment":       "",            // Assignment
+  "talent-show":      "",            // Inbetween - Talent Show
+  "mpl":              "",            // MPL Cricket Tournament
+  "stylish-marketer": "",            // Stylish Marketer - Fashion Show
+  "other-design":     ""             // Other Design (inside Department)
+};
+
+/* Folder cards: what do they show?
+     false  =  the ICON picture from above (clean and always the same)      <-- now
+     true   =  pictures of your works inside the folder, changing at random (the icon becomes a small round badge) */
+const SHOW_WORK_PICTURES = false;
+
+/* =====================================================================
    FOLDERS  -  the folder tree on the "My work" part of the website
    ONE BLOCK = ONE FOLDER.     "sub" = the folders inside it.
      id      short name, small letters, NO SPACES (use - instead).  Example: "clean-water-2"
      name    name shown on the folder card          note  small text under the name
-     icon    emoji (🦁)  OR  a picture:  icon:"LEO.png"   (the file goes in  assets/icons/ )
-             or no change at all: save the picture as  assets/icons/<id>.png  (example: assets/icons/leo.png)
-             Never write <img ...> here. If the picture is missing, the emoji shows.   c  two colours
+     icon    the small EMOJI shown when no picture is found (🦁).  The real PICTURES are set in FOLDER_ICONS just above.
+             (Advanced: icon:"LEO.png" here also works. Never write <img ...> here.)      c  two colours
      covers  (optional) your own pictures for the folder card, e.g. covers:["assets/img/leo1.jpg"]
              If you do not write covers, the website takes pictures from the works inside the folder
              and changes them at random.
@@ -576,9 +614,15 @@ function cardHtml(w, i){
 const ICON_DIR = 'assets/icons/';
 const IMG_EXT  = /\.(png|jpe?g|svg|webp|gif|avif)(\?.*)?$/i;
 function iconInfo(f){
-  const ic = String(f.icon || '').trim();
-  if (IMG_EXT.test(ic)) return {src: (ic.includes('/') ? ic : ICON_DIR + ic), emoji: f.emoji || '📁'};
-  return {src: ICON_DIR + f.id + '.png', emoji: ic || '📁'};                    // emoji given: still try  assets/icons/<id>.png
+  // The picture is chosen in this order:
+  //   1) FOLDER_ICONS (the list above)   2) icon:"x.png" inside the FOLDERS block   3) assets/icons/<id>.png (automatic)   4) emoji
+  const ic    = String(f.icon || '').trim();
+  const pic   = String((typeof FOLDER_ICONS === 'object' && FOLDER_ICONS[f.id]) || '').trim();
+  const emoji = IMG_EXT.test(ic) ? (f.emoji || '📁') : (ic || '📁');
+  const path  = n => (n.includes('/') ? n : ICON_DIR + n);                    // no "/" in the name = look in assets/icons/
+  if (IMG_EXT.test(pic)) return {src: path(pic), emoji};
+  if (IMG_EXT.test(ic))  return {src: path(ic),  emoji};
+  return {src: ICON_DIR + f.id + '.png', emoji};
 }
 function iconMain(f){            // big icon in the middle of the card
   const i = iconInfo(f);
@@ -617,6 +661,7 @@ function setCover(el){
 }
 function startCovers(){
   clearInterval(coverTimer);
+  if (!SHOW_WORK_PICTURES) return;                       // icon only - no changing work pictures
   const els = [...view.querySelectorAll('.fold')];
   els.forEach(el => { el._srcs = coverSrcs(el.dataset.p); el._cur = ''; setCover(el); });
   if (els.length) coverTimer = setInterval(() => { if (!document.hidden) els.forEach(el => { if (Math.random() < 0.6) setCover(el); }); }, 3500);

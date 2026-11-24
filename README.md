@@ -15,7 +15,7 @@ Do NOT test by double-clicking index.html (YouTube / Google refuse on a local fi
 | `style.css`  | colours and looks (change colours at the top) | rarely |
 | `thank-you.html` | spare thank-you page | no |
 | `shrink-images.py` | makes big flyers small | run it |
-| `assets/` | CV PDF, photos, small work files | add files |
+| `assets/` | CV PDF, photos, `icons/` (folder pictures), small work files | add files |
 
 ## 3. Folders on the website  - ෆෝල්ඩර
 The "My work" part shows 3 main folders: **LEO Club** (`leo`), **Department of Marketing Management** (`dept`), **Other Design** (`other`).
@@ -44,11 +44,16 @@ Open `FOLDERS` in `script.js`. Copy one block and give it a NEW `id` (small lett
 For a folder inside another folder, put `sub:[ ... ]` inside the parent block (see `clean-water` > `clean-water-2`).
 If the page goes blank: check the commas, the brackets `[ ]` `{ }`, and that the id has no spaces. Delete a folder = delete its block.
 
-### 3b-2. Folder ICONS (your own picture)
-Put the picture in `assets/icons/` (square .png, transparent background, under 200 KB).
-- **Way 1:** in `FOLDERS` write the file name: `icon:"LEO.png"` (capital letters must match). Example: `{id:"leo", name:"LEO Club", ..., icon:"LEO.png", emoji:"🦁", ...}`
-- **Way 2 (no code change):** save the picture with the folder id as its name: `leo.png`, `dept.png`, `other.png`, `wildlife.png`, `mpl.png` ... the website finds it by itself.
-`assets/icons/LEO.png` is only a SAMPLE: replace it with your own file (same name). The icon shows big in the middle of the card, and as a round badge in the corner when the card shows work pictures. A missing picture shows the emoji.
+### 3b-2. Folder ICONS (your own picture)  - ෆෝල්ඩර අයිකන
+All folder pictures live in ONE place: `FOLDER_ICONS` in `script.js` (just above `FOLDERS`).
+1. Put your picture in `assets/icons/` (square or wide .png, transparent background, under 200 KB).
+2. In `FOLDER_ICONS`, write the file name after the folder name:  `"leo": "LEO.png",`
+3. Save and refresh. Done.
+- **Change a picture later:** put the new file in `assets/icons/` and change the file name, OR replace the old file with a new one of the SAME name.
+- **No picture for a folder:** write `""` and its emoji shows (the emoji is the `icon:` of that folder in `FOLDERS`).
+- Capital letters must match the real file name (`LEO.png` is not `leo.png`).
+- Already set: `leo` = `assets/icons/LEO.png`, `dept` = `assets/icons/DMM.png`. `other` has no picture yet: save one as `assets/icons/Other.png` and write `"other": "Other.png",`.
+- `SHOW_WORK_PICTURES` (just under `FOLDER_ICONS`): `false` = folder cards show the icon (now). `true` = cards show your work pictures changing at random, and the icon becomes a small round badge.
 
 ### 3c. Add a work  - වැඩක් එකතු කිරීම
 Find **PART 2** in `script.js`. One `{ ... },` block = one card. Copy a template from the notes there, change the words and the `file:` link, add `folder:"..."`.

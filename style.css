@@ -368,7 +368,11 @@ footer{padding:32px 0;text-align:center;color:var(--muted);border-top:1px solid 
 @media(max-width:820px){.foot-top{grid-template-columns:1fr;gap:34px}.foot-bottom{justify-content:center;text-align:center}}
 
 /* Folder icon as a picture (PNG / SVG) */
-.fold-cover .ico-img{width:46%;max-height:70%;object-fit:contain;filter:drop-shadow(0 8px 18px rgba(0,0,0,.4))}
+/* Folder icon: fills the card cover, centred, above the dark fade */
+.fold-cover .ico{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center}
+/* Folder icon picture (assets/icons/): sits on a white plate so any logo, dark or light, stays easy to see */
+.fold-cover .ico-img{box-sizing:border-box;width:auto;height:auto;max-width:72%;max-height:76%;object-fit:contain;padding:10px 14px;border-radius:20px;background:#fff;box-shadow:0 10px 26px rgba(0,0,0,.35);transition:transform .35s}
+.fold:hover .fold-cover .ico-img{transform:scale(1.06)}
 
 /* Folder badge (the round picture icon in the corner of a folder card) */
 .fold-badge{position:absolute;left:14px;bottom:14px;z-index:3;width:clamp(48px,22%,76px);aspect-ratio:1;object-fit:contain;padding:6px;border-radius:50%;background:rgba(11,16,32,.75);border:2px solid var(--brand2);box-shadow:0 8px 20px rgba(0,0,0,.45);transition:transform .35s}
