@@ -49,6 +49,8 @@ const SKILLS = [["Graphic Design",90],["Video Editing",88],["Adobe Photoshop",90
    c      two card colours (the preview background also uses them)
    thumb  (optional) small picture for the card
    as     (optional) "video" or "post" - only if the code guessed wrong for a link
+   inside (optional) true = a "web" card opens INSIDE the viewer (Google Drive folder, your own .html page)
+                     instead of a new tab
 
    folder  (optional) which folder it lives in, e.g. folder:"leo/clean-water"  (see FOLDERS above).
            No folder = it goes to "Other Design".
@@ -59,10 +61,11 @@ const SKILLS = [["Graphic Design",90],["Video Editing",88],["Adobe Photoshop",90
    TikTok / Instagram / Facebook -> the post must be Public. Paste the LONG link.
 
    ---------- WHICH LINKS WORK (paste the normal share link in "file") ----------
-   Your own files      "assets/works/photo.jpg", "assets/works/video.mp4"
+   Your own files      "assets/works/photo.jpg", "assets/works/video.mp4", "assets/works/site/index.html"
    YouTube             watch link, youtu.be link, Shorts link, playlist link
    Vimeo               normal link
    Google Drive        share link (Drive > Share > "Anyone with the link")
+   Google Drive FOLDER folder link (shown inside the page with  inside:true  on a "web" card)
    OneDrive/SharePoint the link, or better the "Embed" code:  file:'<iframe src="..."></iframe>'
    Facebook            public video / reel / post link
    Instagram           public post / reel link
@@ -81,6 +84,7 @@ const SKILLS = [["Graphic Design",90],["Video Editing",88],["Adobe Photoshop",90
    ratio:"a3p"   A3 Portrait          ratio:"a3l"   A3 Landscape
    ratio:"f1350" Flyer 1080 x 1350    ratio:"f1080" Flyer 1080 x 1080
    ratio:"v169"  Video 16:9           ratio:"v916"  Video 9:16
+   ratio:"drv"   Drive folder / web page (wide box)
 
    ---------- OPTIONAL: BORDER ----------
    border:"none"            no border, only your design (shows with a soft shadow)
@@ -121,6 +125,10 @@ const SKILLS = [["Graphic Design",90],["Video Editing",88],["Adobe Photoshop",90
 
    F) A work inside a folder (any type: post, video or web):
       {type:"video", title:"Opening Day", note:"Leo Club", folder:"leo/wildlife", file:"https://youtu.be/XXXXXXXXXXX", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
+
+   G) A Google Drive FOLDER, or your own website, opened inside the viewer:
+      {type:"web", title:"My Folder", note:"Drive folder", inside:true, file:"https://drive.google.com/drive/folders/XXXXXXXX?usp=sharing", icon:"💻", c:["#37474f","#ff3d6e"]},
+      {type:"web", title:"My Site",   note:"Local website", inside:true, file:"assets/works/mysite/index.html", icon:"💻", c:["#37474f","#ff3d6e"]},
 
    RULES:  keep every path / link inside quotes " "  -  put a comma after each block (not after the last one).
    ===================================================================== */
@@ -553,9 +561,9 @@ pages:[
 
   {type:"video", title:"EmpowerHer – Video Production", note:"Created and edited a video to promote women’s empowerment and highlight the EmpowerHer initiative.", file:"https://drive.google.com/file/d/1GCBMT8OpQJEZ00khImip4bKk4FOpgW2D/view?usp=sharing", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
 
-  /* ----- WEBSITES (open in a new tab) ----- */
+  /* ----- WEBSITES (open in a new tab, or inside the viewer when inside:true) ----- */
   {type:"web", title:"Elora Website", note:"Move In Style", file:"https://elora.com.lk/", icon:"🌐", c:["#0d47a1","#00bcd4"]},
-  {type:"web", title:"SLIIT website", note:"Project Of IMBS", file:"https://drive.google.com/drive/folders/1_JkdAOZb-q9DFbgUjzImhIIJZtq5dGsd?usp=sharing", icon:"💻", c:["#37474f","#ff3d6e"]}
+  {type:"web", title:"SLIIT website", note:"Project Of IMBS", inside:true, file:"https://drive.google.com/drive/folders/1_JkdAOZb-q9DFbgUjzImhIIJZtq5dGsd?usp=sharing", icon:"💻", c:["#37474f","#ff3d6e"]}
 
   /* ADD A NEW WORK HERE: put a comma after the block above, then paste a template. */
 ];
@@ -603,7 +611,8 @@ const RATIOS = {
   f1350: {l:"Flyer 1080×1350", r:"1080/1350", w:540},
   f1080: {l:"Flyer 1080×1080", r:"1/1",       w:620},
   v169:  {l:"Video 16:9",      r:"16/9",      w:960},
-  v916:  {l:"Video 9:16",      r:"9/16",      w:380}
+  v916:  {l:"Video 9:16",      r:"9/16",      w:380},
+  drv:   {l:"Drive Folder / Web page", r:"4/3", w:1000}
 };
 
 // Border names shown in the caption
@@ -618,6 +627,7 @@ const BORDER_NAMES = {
 // Helpful messages shown under linked videos / photos
 const TIPS = {
   drive:    'Not playing? In Google Drive press Share → set “Anyone with the link”. Long videos need time to process. If you use several Google accounts, press “Open original”.',
+  drivefolder: 'Folder is empty? In Google Drive press Share → set “Anyone with the link”. Click a video inside the folder to play it. Press “Open original” to see the full folder.',
   onedrive: 'OneDrive / SharePoint: Share → Embed → paste the &lt;iframe …&gt; code as the file. School accounts often block outside viewing - then press “Open original”.',
   social:   'The post / video must be Public. If the box is empty, press “Open original”.',
   youtube:  'The video must be Public or Unlisted. If you open this page as a file on your computer, YouTube may refuse - it works on your real website.',
@@ -664,6 +674,8 @@ function resolveLink(input, type){
 
   // 1) A file in your own folder
   if (!/^https?:\/\//i.test(raw)){
+    // your own .html page (a website inside your project) is shown in a frame
+    if (/\.html?([?#].*)?$/i.test(raw)) return {kind:'embed', src: enc(raw), open: enc(raw), ratio:'drv'};
     const kind = fileKind(raw, type);
     return {kind, src: enc(raw), open: enc(raw), dl: enc(raw), video: kind === 'video'};
   }
@@ -700,6 +712,11 @@ function resolveLink(input, type){
 
   // --- Google Drive ---
   if (host === 'drive.google.com'){
+    // a Drive FOLDER: show it inside the page
+    const fold = (u.pathname.match(/\/folders\/([\w-]+)/) || [])[1];
+    if (fold) return done({kind:'embed', tip:'drivefolder', ratio:'drv',
+                           src:'https://drive.google.com/embeddedfolderview?id=' + fold + '#grid'});
+
     const id = (u.pathname.match(/\/file\/d\/([\w-]+)/) || [])[1] || u.searchParams.get('id') || '';
     if (/^[\w-]+$/.test(id)){
       const preview = 'https://drive.google.com/file/d/' + id + '/preview';
@@ -708,7 +725,7 @@ function resolveLink(input, type){
       // a photo: show it directly, and if that fails show Drive's own viewer
       return done({kind:'image', tip:'drive', src: 'https://lh3.googleusercontent.com/d/' + id + '=w1600', fallback: preview, dl});
     }
-    return done({kind:'link', tip:'drive'});               // folders and other Drive pages
+    return done({kind:'link', tip:'drive'});               // other Drive pages
   }
 
   // --- OneDrive / SharePoint ---
@@ -1373,7 +1390,7 @@ function show(k){
     }
   });
 
-  $('vw-k').textContent = (w.type === 'video' ? '🎬 Video' : '🎨 Design') + (list.length > 1 ? `  ·  ${cur + 1} / ${list.length}` : '');
+  $('vw-k').textContent = (w.type === 'video' ? '🎬 Video' : w.type === 'web' ? '🌐 Website' : '🎨 Design') + (list.length > 1 ? `  ·  ${cur + 1} / ${list.length}` : '');
   $('vw-h').textContent = w.title;
   $('vw-n').textContent = w.note;
   const first = resolveLink(ps[0].file, ps[0].as || w.type);
@@ -1424,17 +1441,17 @@ vsc.addEventListener('scroll', () => {
   $('vw-bar').style.width = (max > 0 ? vsc.scrollTop / max * 100 : 0) + '%';
 });
 
-// Click a card: websites open in a new tab, everything else opens in the box
+// Click a card: normal websites open in a new tab, everything else (and web cards with inside:true) opens in the box
 if (view) view.addEventListener('click', e => {
   const card = e.target.closest('.card'); if (!card) return;
   const w = WORKS[card.dataset.i];
-  if (w.type === 'web'){
+  if (w.type === 'web' && !w.inside){
     const url = safeUrl(w.file);
     if (/^https?:\/\//i.test(url)) window.open(url, '_blank', 'noopener,noreferrer');
     return;
   }
   list = [...view.querySelectorAll('.card')]
-           .filter(c => WORKS[c.dataset.i].type !== 'web')
+           .filter(c => WORKS[c.dataset.i].type !== 'web' || WORKS[c.dataset.i].inside)
            .map(c => +c.dataset.i);
   show(list.indexOf(+card.dataset.i));
 });
