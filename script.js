@@ -501,7 +501,7 @@ pages:[
        {file:"https://drive.google.com/file/d/1ACqOWqW2DT5Kqri4UAVdxBGHYSeZj3An/view?usp=sharing", label:"Back Page"}
     ], icon:"🍃", c:["#1b5e20","#9ccc65"]},
 
-   {type:"post", title:" Digital Outlook – Media Partner Highlights Flyer", note:"Designed a flyer showcasing media partners and key event highlights.",  folder:"dept/other-design", file:"https://drive.google.com/file/d/1us_8FnPhcVxDSN3Yy8V-UVVK3mNaMsf1/view?usp=sharing", icon:"👕", c:["#1a237e","#e53935"]},
+   {type:"post", title:" Digital Outlook – Media Partner Highlights Flyer", note:"Designed a flyer showcasing media partners and key event highlights.",  folder:"dept/other-design", file:"https://drive.google.com/file/d/1us_8FnPhcVxDSN3Yy8V-UVVK3mNaMsf1/view?usp=sharing", icon:"✒️", c:["#1a237e","#e53935"]},
  
 {type:"post", title:" 15th Installation – Logo Design", note:"Created a logo design for the 15th installation, representing its identity through creative visual elements.",  folder:"dept/other-design", file:"https://drive.google.com/file/d/1t2pEYnOMMF6u_x7K3zP_QV1ZMi_Qn3L0/view?usp=sharing", icon:"👕", c:["#1a237e","#e53935"]},
 
@@ -543,12 +543,15 @@ pages:[
      {type:"post", title:"Multimedia Content Creator – Recruitment Post Design", note:"Designed a recruitment post to attract creative talent for a multimedia content creator position.", file:"https://drive.google.com/file/d/1mVlGiASGnCYRpBVmRRkj2k-5N56GLsyU/view?usp=sharing", icon:"🎨", c:["#ff3d6e","#6a1b9a"]},
    
    // Videos Folder Design
-     {type:"video", title:"Ruviru BBV", note:"Brand video", file:"https://drive.google.com/file/d/17rGwr9Bf0vkJu0CUc5vTupWykUskaZ7f/view?usp=sharing", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
+     {type:"video", title:"ATC Ceylon – Company Birthday Celebration Video", note:"Created and edited a birthday celebration video to mark a special occasion at ATC Ceylon.", file:"https://drive.google.com/file/d/17rGwr9Bf0vkJu0CUc5vTupWykUskaZ7f/view?usp=sharing", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
 
-   {type:"video", title:"Phandora – Video Production", note:"Brand video", file:"https://drive.google.com/file/d/17rGwr9Bf0vkJu0CUc5vTupWykUskaZ7f/view?usp=sharing", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
+   {type:"video", title:"Phandora – Video Production", note:"Created and edited a promotional video for Phandora using creative visuals and storytelling.", file:"https://drive.google.com/file/d/1T8o0o2ZPGwfpOzcOuDtSuOcqq64DT9Cs/view?usp=sharing", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
 
-   
+   {type:"video", title:"El Niño – Promotional Video", note:"Created and edited a video highlighting El Niño through creative visuals and engaging storytelling.", file:"https://drive.google.com/file/d/1wZJCtu9pYjjedh-k1w7v5gPwFgqHoed3/view?usp=sharing", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
 
+   {type:"video", title:"Fork Sport – Promotional Video", note:"Created and edited a promotional video for Fork Sport using engaging visuals and creative video editing.", file:"https://drive.google.com/file/d/1jPtMFtt0hZ7F1eOLluE3Cnfkl2_0gm1Z/view?usp=sharing", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
+
+  {type:"video", title:"EmpowerHer – Video Production", note:"Created and edited a video to promote women’s empowerment and highlight the EmpowerHer initiative.", file:"https://drive.google.com/file/d/1GCBMT8OpQJEZ00khImip4bKk4FOpgW2D/view?usp=sharing", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
 
   /* ----- WEBSITES (open in a new tab) ----- */
   {type:"web", title:"Elora Website", note:"Move In Style", file:"https://elora.com.lk/", icon:"🌐", c:["#0d47a1","#00bcd4"]},
