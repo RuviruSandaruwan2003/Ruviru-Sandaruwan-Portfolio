@@ -296,8 +296,7 @@ const FOLDERS = [
 const WORKS = [
 
   /* ----- DESIGNS ----- */
-  {type:"post", title:"Meetup Flyer", note:"Event flyer", file:"https://drive.google.com/file/d/1ICpTJ5oD5YvvdGT-UR5uSLhz-18Cwh_y/view?usp=sharing", icon:"🎨", c:["#ff3d6e","#6a1b9a"]},
-   
+   /// Leo Club Folder Design ///
    // Clean Water & Energy Conservation Avenue Images Folder Design
   {type:"post", title:"Avenue Meetup Announcement ", note:"Flyer series (Coming Soon / Date & Venue Revel  / Happening Tomorrow / Happening Today / Successfully Completed)", folder:"leo/clean-water",
 pages:[
@@ -355,41 +354,201 @@ pages:[
       {file:"https://drive.google.com/file/d/1agQQNtl3R8JqYobr6udcBgoUw_vGsOS3/view?usp=sharing", label:"Back Page"}
    ], icon:"⏳", c:["#212121","#ff3d6e"]}, 
 
+   // Wildlife & Animal Conservation Avenue Folder Design
+{type:"post", title:"Successfully Completed Flyers", note:"Designed promotional flyers to announce and celebrate the successful completion of the project.", folder:"leo/wildlife",
+pages:[
+   {file:"https://drive.google.com/file/d/1oGGWHQT68saXVB29MuhLeVdMdzckDcqk/view?usp=sharing", label:"Front Page"},
+   {file:"https://drive.google.com/file/d/1wCYyuAW-J-wD05YdK1xZNy2Y1w2j8Alk/view?usp=sharing", label:"Back Page"}
+], icon:"💧", c:["#0288d1","#00695c"]},   
 
+   {type:"post", title:"Nutrition Program for Pregnant Mothers – Flyer Design", note:"Designed a promotional flyer to raise awareness about maternal nutrition and encourage participation in a nutrition program for pregnant mothers.", folder:"leo/wildlife", file:"https://drive.google.com/file/d/103S6auBwvtUIlcXC8CB7hb5iSy55OTjC/view?usp=sharing", icon:"🥗", c:["#2e7d32","#ffd54f"]},
+
+   {type:"post", title:"Nutrition Program for Elders – Flyer Design", note:"Designed a promotional flyer to raise awareness about nutrition and healthy eating for elderly people.", folder:"leo/wildlife", file:"https://drive.google.com/file/d/1Sp47Ub6NYXc9rOPPxD2Cp8xdOHlUqSwN/view?usp=sharing", icon:"🥗", c:["#2e7d32","#ffd54f"]},
+
+   {type:"post", title:" Organizing Committee – Flyer Design", note:"Designed a promotional flyer to introduce the organizing committee and highlight the team behind the event.", folder:"leo/wildlife", file:"https://drive.google.com/file/d/17c7DAYSWhOU2cwKYXbYtDh3Xk8sdafG6/view?usp=sharing", icon:"🥗", c:["#2e7d32","#ffd54f"]},
+
+     {type:"post", title:"Project Donation Ticket Design", note:"Designed donation tickets to support fundraising efforts and encourage contributions toward the project.", folder:"leo/wildlife", file:"https://drive.google.com/file/d/1S-nRKekQL3kNOjORX06EgdQ6_wAZFSc3/view?usp=sharing", icon:"🥗", c:["#2e7d32","#ffd54f"]},
+
+    {type:"post", title:"Project Aftermovie Thumbnail Design", note:"Designed a thumbnail to promote the project aftermovie with an engaging and visually appealing layout.", folder:"leo/wildlife", file:"https://drive.google.com/file/d/1nTXYbIYG_uyyWnUHN8f1Fmonw2Z0MKIu/view?usp=sharing", icon:"🥗", c:["#2e7d32","#ffd54f"]},
    
-  /* INVITATION: 3 pages, opens one by one from top to bottom, NO border, original design only.
-     Save your 3 images in assets/works/ with these names (or change the names / paste links here).
-     Only 1 image?  Delete the other two "{file:...}" lines. */
-  {type:"post", title:"Invitation", folder:"dept/talent-show", note:"Formal invitation design", border:"none",
-   pages:[{file:"https://drive.google.com/file/d/1Z_ZSMigl8L3ZCE5kLXVZft5C-18gqzZC/view?usp=sharing", label:"Front Page"}],icon:"💌", c:["#283593","#ad1457"]},
-    {type:"post", title:"Invitation", folder:"dept/stylish-marketer", note:"Formal invitation design", border:"none",
-   pages:[{file:"https://drive.google.com/file/d/1SotCD7u21WDhKkWkT2q9gLlYli-TCMrE/view?usp=sharing", label:"Front Page"}],icon:"💌", c:["#283593","#ad1457"]},
+    // Wildlife & Animal Conservation Avenue Videos Folder Design
+{type:"video", title:"Coming Soon Video – Pryama 2.0 Project", note:"Created a teaser video to build excitement and anticipation for the upcoming Pryama 2.0 project.", folder:"leo/wildlife", file:"https://drive.google.com/file/d/1nBRxyHAKnl5tcYxL9U1h8KdbNP_L0SHU/view?usp=sharing", icon:"🥗", c:["#2e7d32","#ffd54f"]},
 
-  /* WEDDING CARD: NO border, original design only.
-     More pages?  Use:  pages:["assets/works/weding Card Sinhala Final.jpg", "assets/works/wedding-2.jpg"]  instead of file */
-  {type:"post", title:"Wedding Card (Sinhala & English)", note:"Print-ready card", border:"none",
+   {type:"video", title:"Happening Now Video – Pryama 2.0 Project", note:"Created a real-time promotional video capturing the ongoing activities and excitement of the Pryama 2.0 project.", folder:"leo/wildlife", file:"https://drive.google.com/file/d/1zVhKEhCI3PbsdQkJ9vnB3_5_qD7X3sGH/view?usp=sharing", icon:"🥗", c:["#2e7d32","#ffd54f"]},
+
+   /// Department Of Marketing Management Folder Design ///
+   // Assigment Images Folder Design 
+   {type:"post", title:"Midori Jelly – Product Label & Packaging Design", note:"Designed a new product label with circular and rectangular packaging layouts, including mockup designs to showcase the final product presentation.", folder:"dept/assignment", 
+    pages:[
+       {file:"https://drive.google.com/file/d/1s7c_E1zcF8LqkDWqPU7L2ZQ3dTBj566_/view?usp=sharing",label:"Front Page"},
+       {file:"https://drive.google.com/file/d/1GEc_Z_DffOznlt_O4L_8i6EEejNmnMZ8/view?usp=sharing", label:"Details Page"},
+       {file:"https://drive.google.com/file/d/1U9t-BVXqsbo1JDrWa7K6HhwAfzmyJIHU/view?usp=sharing", label:"Back Page"}
+    ], icon:"🍃", c:["#1b5e20","#9ccc65"]},
+
+   {type:"post", title:"Assignment Cover Page Design – 3 Designs", note:"Designed three creative and visually appealing assignment cover pages with unique layouts, typography, and graphic elements.", folder:"dept/assignment", 
+    pages:[
+       {file:"https://drive.google.com/file/d/18E4AgLBJiwCJI2YzcjfneyXNnt3hX50P/view?usp=sharing",label:"Front Page"},
+       {file:"https://drive.google.com/file/d/1L1NLB_45rC7NxTBt6I2JHjVQQxK1BZM_/view?usp=sharing", label:"Details Page"},
+       {file:"https://drive.google.com/file/d/1KcGKznKTFkJu2HcPGrsC6wUwXy_8-orN/view?usp=sharing", label:"Back Page"}
+    ], icon:"🍃", c:["#1b5e20","#9ccc65"]},
+
+   // Assigment Video Folder Design 
+ {type:"video", title:"Entrepreneurship & Innovation – Assignment Video", note:"Created an assignment video presenting key concepts of entrepreneurship and innovation through creative visual storytelling and video editing.",folder:"dept/assignment", file:"https://drive.google.com/file/d/1BHVgqdrcvWowr6rKAQal5D-9wmqj39z5/view?usp=sharing", icon:"💡", c:["#00838f","#283593"]},
+
+    {type:"video", title:"Delth Drama – Assignment Video", note:"Created a company visit video documenting the educational visit to People’s Leasing, highlighting key experiences and insights through video editing.",folder:"dept/assignment", file:"https://drive.google.com/file/d/15LSRaIgexLSwMpW4vKBPYFXuC9VKNCvV/view?usp=sharing", icon:"💡", c:["#00838f","#283593"]},
+
+    {type:"video", title:"Fundamentals of Accounting – Company Visit to People’s Leasing", note:"Created an assignment video presenting key concepts of entrepreneurship and innovation through creative visual storytelling and video editing.",folder:"dept/assignment", file:"https://drive.google.com/file/d/1OxdcOF4H_7f44v_rtDJ4PS2RtWAA1YFb/view?usp=sharing", icon:"💡", c:["#00838f","#283593"]},
+
+    {type:"video", title:"Marketing Communication – Situational Video", note:"Created a situational video for a marketing communication assignment, demonstrating real-life communication concepts through creative storytelling and video editing.",folder:"dept/assignment", file:"https://drive.google.com/file/d/1T61Yetr4oKnM2t7vfp_-iYILRMzEWz_k/view?usp=sharing", icon:"💡", c:["#00838f","#283593"]},
+   
+  // Inbetween - Talent Show Images Folder Design
+   {type:"post", title:"Talent Show – Invitation Design", folder:"dept/talent-show", note:"Designed an invitation to promote the talent show and encourage audience participation.", border:"none",file:"https://drive.google.com/file/d/1Z_ZSMigl8L3ZCE5kLXVZft5C-18gqzZC/view?usp=sharing", icon:"💌", c:["#283593","#ad1457"]},
+
+   {type:"post", title:"Film Ticket Design", folder:"dept/talent-show", note:"Designed a creative film ticket featuring essential movie details and an attractive layout to enhance the cinema experience.", border:"none", file:"https://drive.google.com/file/d/1AaxGJ4B5YOfgmYctT2oarovimUXXVR7C/view?usp=sharing", icon:"💌", c:["#283593","#ad1457"]},
+
+{type:"post", title:"Event Teaser Flyer Design", folder:"dept/talent-show", note:"Designed a teaser flyer to build excitement and anticipation for the upcoming event.", border:"none", file:"https://drive.google.com/file/d/1Ww_5k98bI9PkqzGFHv2OEvFyjE1c8D2P/view?usp=sharing", icon:"💌", c:["#283593","#ad1457"]},
+
+   {type:"post", title:"Fundraising Wristband Design", folder:"dept/talent-show", note:"Designed wristbands for fundraising events to promote participation and support the fundraising campaign.", border:"none", file:"https://drive.google.com/file/d/1O01wFqsBEbdz39RxVlfc0h5ch7fBXxnq/view?usp=sharing", icon:"💌", c:["#283593","#ad1457"]},
+   
+  // Inbetween - Talent Show Videos Folder Design
+ {type:"video", title:"Coming Soon Video – Event Promotion", folder:"dept/talent-show", note:"Created a teaser video to build excitement and anticipation for the upcoming event.", border:"none", file:"https://drive.google.com/file/d/1KqJzSEJD0lTFxPA71u9iP0mS6VmA3lnQ/view?usp=sharing", icon:"💌", c:["#283593","#ad1457"]},
+
+ {type:"video", title:"Inbetween – PR Campaign Video Production", folder:"dept/talent-show", note:"Created promotional videos for the Inbetween PR campaign, contributing through acting, video capturing, and video editing to promote the event.", border:"none", file:"https://drive.google.com/file/d/1TyitJhGvJHEwXfEK7RFHf0tTzmisD4Zf/view?usp=sharing", icon:"💌", c:["#283593","#ad1457"]},
+
+   // MPL Images Folder Design 
+ {type:"post", title:"Winner Award Design", folder:"dept/mpl", note:"Designed a winner award to celebrate and recognize the champions of the Marketing Premier League Cricket Tournament.", border:"none", file:"https://drive.google.com/file/d/1FC5_OKKEP_HT99CVyzQmtAkxBI72B86I/view?usp=sharing", icon:"💌", c:["#283593","#ad1457"]},
+
+   // MPL Videos Folder Design 
+{type:"video", title:"Sponsor TikTok Video", folder:"dept/mpl", note:"Created a TikTok promotional video highlighting Kalo Sponsor CBL and the tournament through creative video editing and event promotion.", border:"none", file:"https://drive.google.com/file/d/1Rye9mSTCfkPsXhtR1KBFP0Q9Z8h5Lrbv/view?usp=sharing", icon:"💌", c:["#283593","#ad1457"]},
+
+   // Stylish Marketer Images Folder Design
+  {type:"post", title:"Invitation Design", folder:"dept/stylish-marketer", note:"Designed an invitation for Stylish Marketer, the biggest inter-university fashion show, to promote the event and attract attendees.", border:"none", file:"https://drive.google.com/file/d/1SotCD7u21WDhKkWkT2q9gLlYli-TCMrE/view?usp=sharing", icon:"💌", c:["#283593","#ad1457"]},
+
+     {type:"post", title:"Artist Announcement Design – 4 Designs", note:"Created promotional content featuring artists Mihindu Ariyaratne, Ravi Jay, and Yuki to build excitement for the Stylish Marketer fashion show.", folder:"dept/stylish-marketer", 
+    pages:[
+       {file:"https://drive.google.com/file/d/1YaRa9QMmfYmR2xRYZox9ktkZuZ198FfW/view?usp=sharing",label:"Front Page"},
+       {file:"https://drive.google.com/file/d/14mWBuiTKBX-D5bdJPT_yY3EhygiZIh23/view?usp=sharing", label:"Details Page"},
+       {file:"https://drive.google.com/file/d/1CPhr-litiEcgn-ar1hXChhbH4SqCqiJv/view?usp=sharing", label:"Details Page"},
+       {file:"https://drive.google.com/file/d/1-FQ__zPWAT1ZV_LDI8JCWZhqZHEYQQdN/view?usp=sharing", label:"Back Page"}
+    ], icon:"🍃", c:["#1b5e20","#9ccc65"]},
+
+        {type:"post", title:"Fundraising T-Shirt Design – 2 Designs", note:"Designed two creative T-shirt designs to support fundraising efforts and promote the event.", folder:"dept/stylish-marketer", 
+    pages:[
+       {file:"https://drive.google.com/file/d/1LmP-pF8jYPv0H_oI15Ae5JyBHb2l9ay6/view?usp=sharing",label:"Front Page"},
+       {file:"https://drive.google.com/file/d/1z5BePFnFbRa3KUx_FDraKgtSM00nIVKM/view?usp=sharing", label:"Back Page"}
+    ], icon:"🍃", c:["#1b5e20","#9ccc65"]},
+
+    {type:"post", title:"Event Backdrop Design – 10 × 8 ft", folder:"dept/stylish-marketer", note:"Designed an event backdrop featuring creative visuals and branding elements for stage decoration and event photography.", border:"none", file:"https://drive.google.com/file/d/1cNx0DB5amA0oDAVf0MDQkA4V2XlSsn-0/view?usp=sharing", icon:"💌", c:["#283593","#ad1457"]},
+
+{type:"post", title:"Certificate Design Collection", folder:"dept/stylish-marketer", note:"Designed 33 certificates for male and female winners, runners-up, designers, special awards, popular models, and Top 10 participants, recognizing their achievements and participation in the event.", border:"none",
+   pages:[
+       {file:"https://drive.google.com/file/d/1qZTPpC-XzdizxdbWO-RX9bwhn1l3P79J/view?usp=sharing",label:"Front Page"},
+       {file:"https://drive.google.com/file/d/16R456u_8fvNoH8rDf4p2KR_6fB-rFLw4/view?usp=sharing", label:"Details Page"},
+       {file:"https://drive.google.com/file/d/1AqKmUuTbHuXd3pXJTl0mizFcyypvUb7h/view?usp=sharing", label:"Back Page"}
+    ], icon:"🍃", c:["#1b5e20","#9ccc65"]},
+
+{type:"post", title:"Sash Design Collection (11 Designs)", folder:"dept/stylish-marketer", note:"Designed 11 event sashes for male and female winners, runners-up, Most Popular, and Most Confident Female Model award categories.", border:"none",
+   pages:[
+       {file:"https://drive.google.com/file/d/1AIx4Y0y-S9Esa2zCMhpeJwr4P0kbQp94/view?usp=sharing",label:"Front Page"},
+       {file:"https://drive.google.com/file/d/1HsE6cPzrWgCNkPMKU77TNmliA3SCfKOk/view?usp=sharing", label:"Back Page"}
+    ], icon:"🍃", c:["#1b5e20","#9ccc65"]},
+
+   {type:"post", title:"T-Shirt Selling Flyer Design", folder:"dept/stylish-marketer", note:"Designed a promotional flyer to advertise and encourage sales of event T-shirts.", border:"none", file:"https://drive.google.com/file/d/1PkUSQ9u9iQbezxPgkhkBKasJOLRjKqqV/view?usp=sharing", icon:"💌", c:["#283593","#ad1457"]},
+
+   {type:"post", title:"Registration Closing Flyer Design", folder:"dept/stylish-marketer", note:"Designed an official flyer announcing the closing of registrations and encouraging participants to complete their registration before the deadline.", border:"none", file:"https://drive.google.com/file/d/1im8S2vFo_EkLZ78oQrljb-Yez1orylj5/view?usp=sharing", icon:"💌", c:["#283593","#ad1457"]},
+   
+   // Stylish Marketer Videos Folder Design
+{type:"video", title:"First Recap Video", note:"Created the first recap video highlighting key moments, activities, and excitement from the Stylish Marketer event.", folder:"dept/stylish-marketer", file:"https://drive.google.com/file/d/1c1wEa2rqPzN_ZKb6xaKiCn8Saypt_QfO/view?usp=sharing", icon:"🎞️", c:["#4a148c","#ffc857"]},
+
+   {type:"video", title:"Revel – Underwater Theme Video Collection (3 Videos)", folder:"dept/stylish-marketer", note:"Created three underwater-themed video clips with creative transitions and visual effects to bring the Revel event theme to life.", border:"none",
+   pages:[
+       {file:"https://drive.google.com/file/d/1JnpqGb-70JnBixcYdAiK2sfK7A9OGVev/view?usp=sharing",label:"Front Page"},
+       {file:"https://drive.google.com/file/d/14uwItdJBgKlUnclyoYzCxdCuwQUIUP4t/view?usp=sharing", label:"Details Page"},
+       {file:"https://drive.google.com/file/d/1ka53_nw0_AVXcjMR7iRVF_k3FCpX943F/view?usp=sharing", label:"Back Page"}
+    ], icon:"🍃", c:["#1b5e20","#9ccc65"]},
+   
+{type:"video", title:"  Truck Screen Video Loop Collection (5 Videos)", folder:"dept/stylish-marketer", note:"Created five looping video clips for the event truck screen, featuring engaging visuals and seamless transitions for continuous playback.", border:"none",
+   pages:[
+       {file:"https://drive.google.com/file/d/1VOR8oFbs_27Y5rgLWdYjgr9XrmMguAjX/view?usp=sharing",label:"Front Page"},
+       {file:"https://drive.google.com/file/d/1x1G1kcB16QD9L8yH71Z2Zn5GKXbDrptD/view?usp=sharing", label:"Details Page"},
+       {file:"https://drive.google.com/file/d/1MsGv9mTPTCg6EHdfOhxjS-H0EDgUlOgO/view?usp=sharing", label:"Details Page"},
+       {file:"https://drive.google.com/file/d/18s3NIHTy60pYrA6vt4kTUrs_plw69-rR/view?usp=sharing", label:"Details Page"},
+       {file:"https://drive.google.com/file/d/1g1db49Z7Y9YJQl-ZU85vySQnYCpGp4Au/view?usp=sharing", label:"Back Page"}
+    ], icon:"🍃", c:["#1b5e20","#9ccc65"]},
+
+   {type:"video", title:"Audition Video Production", note:"Created and edited audition videos to showcase participants’ performances and support the event selection process.", folder:"dept/stylish-marketer", file:"https://drive.google.com/file/d/1WG-Xf81SgCypPcdsbnvk5zpGRR_8uOVe/view?usp=sharing", icon:"🎞️", c:["#4a148c","#ffc857"]},
+
+     {type:"video", title:"Mini Cooper Promotional Video", note:"Created and edited a promotional video featuring the Mini Cooper to highlight the vehicle and create excitement for the Revel event.", folder:"dept/stylish-marketer", file:"https://drive.google.com/file/d/1CwAwhXmb5zcPngwg_bDuzowMapQySHKh/view?usp=sharing", icon:"🎞️", c:["#4a148c","#ffc857"]},
+
+     {type:"video", title:"Influencer Promotional Video", note:"Captured and edited a ticket-selling promotional video featuring Deshitha Peiris, an actor from the Man Adarei teledrama on TV Derana, achieving 19.3K TikTok views and 15K Facebook views.", folder:"dept/stylish-marketer", file:"https://drive.google.com/file/d/14_dg3ifrUT0JC66lo-5gZgXVRK3NH3Mp/view?usp=sharing", icon:"🎞️", c:["#4a148c","#ffc857"]},
+
+     {type:"video", title:"“Tomorrow, We Make History” Teaser Video", note:"Created a pre-event teaser video around the concept “Today, We Build the Stage. Tomorrow, We Make History,” building excitement and anticipation for the event.", folder:"dept/stylish-marketer", file:"https://drive.google.com/file/d/1mywWXK49JKYvkPS8ByRChckSyeBqm41l/view?usp=sharing", icon:"🎞️", c:["#4a148c","#ffc857"]},
+
+     {type:"video", title:"Adobe Premiere Pro – Installation & Basic Tutorial Video", note:"Presented and created a beginner-friendly tutorial video demonstrating Adobe Premiere Pro installation and basic video editing techniques.", file:"https://drive.google.com/file/d/1BFLffrDJ7OoCogAOVat7FDolKYB-MAfV/view?usp=sharing", icon:"🎞️", c:["#4a148c","#ffc857"]},
+
+   // Depatment Other Design Images Folder Design
+{type:"post", title:"Polo T-Shirt Design", note:"Designed a custom polo T-shirt featuring creative graphics, branding elements, and a professional layout.",  folder:"dept/other-design", file:"https://drive.google.com/file/d/11YOBgQSvYu2SmAgkUab1q7eaYGFvRY00/view?usp=sharing", icon:"👕", c:["#1a237e","#e53935"]},
+
+{type:"post", title:"New Batch Welcome Gift Design", note:"Designed welcome gifts to warmly welcome new batch students and create a memorable first impression.",  folder:"dept/other-design", 
+  pages:[
+       {file:"https://drive.google.com/file/d/1ANGnbTgxH3RQkyxsNiw_Wd0MCPUaNdIy/view?usp=sharing",label:"Front Page"},
+       {file:"https://drive.google.com/file/d/1h_44tB6tQtTkZrCIzgxGC43WCweWMZUF/view?usp=sharing", label:"Back Page"}
+    ], icon:"🍃", c:["#1b5e20","#9ccc65"]},
+
+   {type:"post", title:"Flyer Design", note:"Designed a creative promotional flyer with an attractive layout, typography, and visual elements to effectively communicate the event or campaign message.",  folder:"dept/other-design", 
+  pages:[
+       {file:"https://drive.google.com/file/d/1Li3A-PXGtyXGHb3QwuEG6Qxy6kpWMxzT/view?usp=sharing",label:"Front Page"},
+       {file:"https://drive.google.com/file/d/1ACqOWqW2DT5Kqri4UAVdxBGHYSeZj3An/view?usp=sharing", label:"Back Page"}
+    ], icon:"🍃", c:["#1b5e20","#9ccc65"]},
+
+   {type:"post", title:" Digital Outlook – Media Partner Highlights Flyer", note:"Designed a flyer showcasing media partners and key event highlights.",  folder:"dept/other-design", file:"https://drive.google.com/file/d/1us_8FnPhcVxDSN3Yy8V-UVVK3mNaMsf1/view?usp=sharing", icon:"👕", c:["#1a237e","#e53935"]},
+ 
+{type:"post", title:" 15th Installation – Logo Design", note:"Created a logo design for the 15th installation, representing its identity through creative visual elements.",  folder:"dept/other-design", file:"https://drive.google.com/file/d/1t2pEYnOMMF6u_x7K3zP_QV1ZMi_Qn3L0/view?usp=sharing", icon:"👕", c:["#1a237e","#e53935"]},
+
+   // Depatment Other Design Video Folder Design
+
+  /// Other Design ///
+   //Images Folder Design
+{type:"post", title:"Wedding Card (Sinhala & English)", note:"Print-ready card", border:"none",
     pages:[
       {file:"https://drive.google.com/file/d/1wDc0LqTofy-5YMdysrVaVt9E8BOwzJP3/view?usp=sharing", label:"Front Page"},
-     {file:"https://drive.google.com/file/d/16sY4Yh2tOkrJ2M96zM1eH6KStxdfGCya/view?usp=sharing", label:"Back Page"}
-   ],
-   icon:"💍", c:["#8d6e63","#ffb74d"]},
+      {file:"https://drive.google.com/file/d/16sY4Yh2tOkrJ2M96zM1eH6KStxdfGCya/view?usp=sharing", label:"Back Page"}
+    ], icon:"💍", c:["#8d6e63","#ffb74d"]},
 
-  {type:"post", title:"Nutrition Program Flyer", note:"Today / Tomorrow / Happening series", folder:"leo/wildlife", file:"https://drive.google.com/file/d/103S6auBwvtUIlcXC8CB7hb5iSy55OTjC/view?usp=sharing", icon:"🥗", c:["#2e7d32","#ffd54f"]},
-  {type:"post", title:"Midori Jelly Label", note:"Product label and packaging design", folder:"dept/assignment", file:"https://drive.google.com/file/d/1GEc_Z_DffOznlt_O4L_8i6EEejNmnMZ8/view?usp=sharing", icon:"🍃", c:["#1b5e20","#9ccc65"]},
-  {type:"post", title:"Polo T-shirt Mockup", note:"Free Polo Strip Collar mockup",  folder:"dept/other-design", file:"https://drive.google.com/file/d/11YOBgQSvYu2SmAgkUab1q7eaYGFvRY00/view?usp=sharing", icon:"👕", c:["#1a237e","#e53935"]},
+   {type:"post", title:"Logo Design", note:"Created a creative logo design featuring a unique visual identity, typography, and symbolic elements.", border:"none",
+    pages:[
+      {file:"https://drive.google.com/file/d/1qFwtCfZP470j_25Woo_K7cJpcpnAFT1h/view?usp=sharing", label:"Front Page"},
+      {file:"https://drive.google.com/file/d/1VnzxeX433YSitbWeCUWgUgHgvfV04F7e/view?usp=sharing", label:"Back Page"}
+    ], icon:"💍", c:["#8d6e63","#ffb74d"]},
 
-// other Design Adding One by One 
+   {type:"post", title:"Personal Memory", note:"Created a personalized photo composition using creative editing and visual elements to preserve meaningful memories.", border:"none",
+    pages:[
+      {file:"https://drive.google.com/file/d/1rtITn7JZIX-Dn8x_tdZmhW_lmKeMZXZf/view?usp=sharing", label:"Front Page"},
+      {file:"https://drive.google.com/file/d/10fVngE30iaYTY2-ODD-eFwiqOrs59KVo/view?usp=sharing", label:"Details Page"},
+      {file:"https://drive.google.com/file/d/1HYi1X8WOT8ndjUcEcIdS4KNhsx1fiuYJ/view?usp=sharing", label:"Back Page"}
+    ], icon:"💍", c:["#8d6e63","#ffb74d"]},
+
+   {type:"post", title:"Manjusawa 2025 – Event Design", note:"Created creative promotional and visual design materials for Manjusawa 2025.", border:"none",
+    pages:[
+      {file:"https://drive.google.com/file/d/1kP_gJBbMI49AH2nbzlijFE66UBCqRVsi/view?usp=sharing", label:"Front Page"},
+      {file:"https://drive.google.com/file/d/1cBwJSwWMhncEx_DN-r1csYO1RolK7ISY/view?usp=sharing", label:"Details Page"},
+      {file:"https://drive.google.com/file/d/1JDnaJOpY6aDDKknEZo37yg3--rvgnM-j/view?usp=sharing", label:"Details Page"},
+      {file:"https://drive.google.com/file/d/14OHk0xXp8l12wQEh5Pz0-UlChSW98WV6/view?usp=sharing", label:"Details Page"},
+      {file:"https://drive.google.com/file/d/11joz-eU30bekBwrEFNim1TV8BE7gf5Qh/view?usp=sharing", label:"Details Page"},
+      {file:"https://drive.google.com/file/d/1ro-DaNUuPfWyAx_-3Lo7VUbYS4274SoE/view?usp=sharing", label:"Back Page"}
+    ], icon:"💍", c:["#8d6e63","#ffb74d"]},
+
+    {type:"post", title:"Meetup Flyer", note:"Event flyer", file:"https://drive.google.com/file/d/1ICpTJ5oD5YvvdGT-UR5uSLhz-18Cwh_y/view?usp=sharing", icon:"🎨", c:["#ff3d6e","#6a1b9a"]},
+
+     {type:"post", title:"Multimedia Content Creator – Recruitment Post Design", note:"Designed a recruitment post to attract creative talent for a multimedia content creator position.", file:"https://drive.google.com/file/d/1mVlGiASGnCYRpBVmRRkj2k-5N56GLsyU/view?usp=sharing", icon:"🎨", c:["#ff3d6e","#6a1b9a"]},
+   
+   // Videos Folder Design
+     {type:"video", title:"Ruviru BBV", note:"Brand video", file:"https://drive.google.com/file/d/17rGwr9Bf0vkJu0CUc5vTupWykUskaZ7f/view?usp=sharing", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
+
+   {type:"video", title:"Phandora – Video Production", note:"Brand video", file:"https://drive.google.com/file/d/17rGwr9Bf0vkJu0CUc5vTupWykUskaZ7f/view?usp=sharing", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
+
    
 
-   
-                                                                                             
-  /* ----- VIDEOS (16:9 + film-strip edge by default) ----- */
-  /* This one is a Google Drive link. Drive > Share > "Anyone with the link" is required.
-     If Drive keeps showing an error, upload the video to YouTube as "Unlisted" and paste that link instead. */
-  {type:"video", title:"Ruviru BBV", note:"Brand video", file:"https://drive.google.com/file/d/17rGwr9Bf0vkJu0CUc5vTupWykUskaZ7f/view?usp=sharing", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
-  {type:"video", title:"Entrepreneurship & Innovation", note:"Promo video",folder:"dept/assignment", file:"https://drive.google.com/file/d/1BHVgqdrcvWowr6rKAQal5D-9wmqj39z5/view?usp=sharing", icon:"💡", c:["#00838f","#283593"]},
-  
-  {type:"video", title:"Stylish Maketer First Recap", note:"Event recap video", folder:"dept/stylish-marketer", file:"https://drive.google.com/file/d/1c1wEa2rqPzN_ZKb6xaKiCn8Saypt_QfO/view?usp=sharing", icon:"🎞️", c:["#4a148c","#ffc857"]},
 
   /* ----- WEBSITES (open in a new tab) ----- */
   {type:"web", title:"Elora Website", note:"Move In Style", file:"https://elora.com.lk/", icon:"🌐", c:["#0d47a1","#00bcd4"]},
