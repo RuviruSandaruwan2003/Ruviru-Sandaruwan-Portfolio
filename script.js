@@ -305,7 +305,7 @@ pages:[
    {file:"https://drive.google.com/file/d/1b2VIOwOfBoV7-nxvfW_bOUD4DKVzah71/view?usp=sharing", label:"Details Page"},
    {file:"https://drive.google.com/file/d/1h4u1zmSUkiuvNtxOgWmlATZDVnOiQSvE/view?usp=sharing", label:"Details Page"},
    {file:"https://drive.google.com/file/d/1h1-pJXWgQXxqFCyhWofgWoETveepYkUe/view?usp=sharing", label:"Details Page"},
-   {file:"https://drive.google.com/file/d/1zkpOLysOeBNPX32avywW-kfKKQAX2GWH/view?usp=sharing", label:"Back Page"},
+   {file:"https://drive.google.com/file/d/1zkpOLysOeBNPX32avywW-kfKKQAX2GWH/view?usp=sharing", label:"Back Page"}
 ], icon:"💧", c:["#0288d1","#00695c"]},
    
   {type:"post", title:"Leadership Body Announcement", note:"Countdown series (Open Soon / Open Now /Closing Soon/ Closed)", folder:"leo/clean-water", 
@@ -313,7 +313,7 @@ pages:[
    {file:"https://drive.google.com/file/d/1eqnRsP8MidEX7UDy5TD0qgZyQeymH-Ch/view?usp=sharing", label:"Front Page"},
    {file:"https://drive.google.com/file/d/1ujmiw-JILNpYKw02_HmYBG9xqO1btDJH/view?usp=sharing", label:"Details Page"},
    {file:"https://drive.google.com/file/d/10E3GrRbRIejv2ma21y9SaPuh8hpEEySS/view?usp=sharing", label:"Details Page"},
-   {file:"https://drive.google.com/file/d/14RqkGHd50sLQNBcQG-F8DY9WDzQnTZMg/view?usp=sharing", label:"Back Page"},
+   {file:"https://drive.google.com/file/d/14RqkGHd50sLQNBcQG-F8DY9WDzQnTZMg/view?usp=sharing", label:"Back Page"}
    ], icon:"📣", c:["#ffc857","#b71c1c"]},
 
 {type:"post", title:"Book Mark Design", note:"Appreciation for Avenue Meetup Participants", folder:"leo/clean-water", file:"https://drive.google.com/file/d/1MRUY8T6JOlJR_0UPNDGolXH9eQp-ydVb/view?usp=sharing", icon:"🥗", c:["#2e7d32","#ffd54f"]},
@@ -324,10 +324,39 @@ pages:[
 {type:"video", title:"Avenue Recap Video ", note:"A short recap video capturing the key moments, activities, and highlights",folder:"leo/clean-water", file:"https://drive.google.com/file/d/1x_a76r5oh3PLTH9PNXpw7ngyA9nMe47i/view?usp=sharing", icon:"💡", c:["#00838f","#283593"]},
 
    // Religion & Culture Avenue Images Folder Design
-{type:"post", title:"Book Mark Design", note:"Appreciation for Avenue Meetup Participants", folder:"leo/clean-water", file:"https://drive.google.com/file/d/1MRUY8T6JOlJR_0UPNDGolXH9eQp-ydVb/view?usp=sharing", icon:"🥗", c:["#2e7d32","#ffd54f"]},
+{type:"post", title:"Video Template", note:"Unity Empowerment Campaign", folder:"leo/religion-culture", file:"https://drive.google.com/file/d/10EM8ucxcGNHkfXWstWtNLKhZ8wKeK8-t/view?usp=sharing", icon:"🥗", c:["#2e7d32","#ffd54f"]},
+
+{type:"post", title:"Avurudu Donation Campaign Poster", note:"Designed an Avurudu donation campaign poster to encourage donations and support children in need.", folder:"leo/religion-culture", file:"https://drive.google.com/file/d/1OW2i5ClurfgazeU6-qWEE59JpAo0Hpur/view?usp=sharing", icon:"🥗", c:["#2e7d32","#ffd54f"]},
+
+ // Religion & Culture Avenue Videos Folder Design
+  {type:"video", title:"Coming Soon Video – Dirgayu & Ekaloka Project", note:"Created a teaser video to build excitement and anticipation for the upcoming Dirgayu & Ekaloka project.", folder:"leo/religion-culture",
+   pages:[
+      {file:"https://drive.google.com/file/d/1Euiy74GX6sPs2tRKLvYWV4teABLa0CIE/view?usp=sharing", label:"Front Page"},
+      {file:"https://drive.google.com/file/d/1EwPKCxSnRE1tXibJNR34psuG_SqA2u2E/view?usp=sharing", label:"Back Page"}
+   ], icon:"⏳", c:["#212121","#ff3d6e"]}, 
+
+  {type:"video", title:"Project Recap Video – Dirgayu & Ekaloka", note:"A recap video highlighting the key moments, activities, and memories of the Dirgayu & Ekaloka project.", folder:"leo/religion-culture",
+   pages:[
+      {file:"https://drive.google.com/file/d/1DHPhkKsfq-k-lsDT3Q5w3_vLOnk1pYEm/view?usp=sharing", label:"Front Page"},
+      {file:"https://drive.google.com/file/d/1tJFp8E7am_nunaE-hlABLaJY5q_FLMLf/view?usp=sharing", label:"Details Page"},
+      {file:"https://drive.google.com/file/d/1MGCMKigbEal0OjXu2sourhWodnUyQeES/view?usp=sharing", label:"Details Page"},
+      {file:"https://drive.google.com/file/d/13bxYAAcUVH82BdkizDAlnS9fkkKLgFlT/view?usp=sharing", label:"Back Page"}
+   ], icon:"⏳", c:["#212121","#ff3d6e"]},
+
+   {type:"video", title:"Logo Animation – Dirgayu & Ekaloka Project", note:"Created a logo animation to introduce and enhance the visual identity of the Dirgayu & Ekaloka project.", folder:"leo/religion-culture",
+   pages:[
+      {file:"https://drive.google.com/file/d/1AIUql4W4e_8IE_RtzytgJCBXx3df5imC/view?usp=sharing", label:"Front Page"},
+      {file:"https://drive.google.com/file/d/1Frtwe0o8AQQb7M0H_LS5qE9-0PMKDhHt/view?usp=sharing", label:"Back Page"}
+   ], icon:"⏳", c:["#212121","#ff3d6e"]}, 
+
+{type:"video", title:"Project Ekaloka – Awareness Video Production", note:"Created two awareness videos for Project Ekaloka, handling video footage capturing and editing to communicate the project's message effectively.", folder:"leo/religion-culture",
+   pages:[
+      {file:"https://drive.google.com/file/d/1wXVO_aiKW4gqNPjdg0THrgWWM7wtOEfx/view?usp=sharing", label:"Front Page"},
+      {file:"https://drive.google.com/file/d/1agQQNtl3R8JqYobr6udcBgoUw_vGsOS3/view?usp=sharing", label:"Back Page"}
+   ], icon:"⏳", c:["#212121","#ff3d6e"]}, 
+
 
    
-
   /* INVITATION: 3 pages, opens one by one from top to bottom, NO border, original design only.
      Save your 3 images in assets/works/ with these names (or change the names / paste links here).
      Only 1 image?  Delete the other two "{file:...}" lines. */
@@ -359,7 +388,7 @@ pages:[
      If Drive keeps showing an error, upload the video to YouTube as "Unlisted" and paste that link instead. */
   {type:"video", title:"Ruviru BBV", note:"Brand video", file:"https://drive.google.com/file/d/17rGwr9Bf0vkJu0CUc5vTupWykUskaZ7f/view?usp=sharing", icon:"🎬", c:["#6a1b9a","#ff3d6e"]},
   {type:"video", title:"Entrepreneurship & Innovation", note:"Promo video",folder:"dept/assignment", file:"https://drive.google.com/file/d/1BHVgqdrcvWowr6rKAQal5D-9wmqj39z5/view?usp=sharing", icon:"💡", c:["#00838f","#283593"]},
-  {type:"video", title:"Coming Soon Teaser", note:"Event teaser video", folder:"leo/religion-culture", file:"https://drive.google.com/file/d/1Euiy74GX6sPs2tRKLvYWV4teABLa0CIE/view?usp=sharing", icon:"⏳", c:["#212121","#ff3d6e"]},
+  
   {type:"video", title:"Stylish Maketer First Recap", note:"Event recap video", folder:"dept/stylish-marketer", file:"https://drive.google.com/file/d/1c1wEa2rqPzN_ZKb6xaKiCn8Saypt_QfO/view?usp=sharing", icon:"🎞️", c:["#4a148c","#ffc857"]},
 
   /* ----- WEBSITES (open in a new tab) ----- */
