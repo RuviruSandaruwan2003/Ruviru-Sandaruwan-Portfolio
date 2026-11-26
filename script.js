@@ -297,8 +297,36 @@ const WORKS = [
 
   /* ----- DESIGNS ----- */
   {type:"post", title:"Meetup Flyer", note:"Event flyer", file:"https://drive.google.com/file/d/1ICpTJ5oD5YvvdGT-UR5uSLhz-18Cwh_y/view?usp=sharing", icon:"🎨", c:["#ff3d6e","#6a1b9a"]},
-  {type:"post", title:"Clean Water & Energy Avenue", note:"Leo Club campaign post", folder:"leo/clean-water", file:"https://drive.google.com/file/d/1JMGZENJEcMS3loxmX2lNHm1uVn8BMEW_/view?usp=sharing", icon:"💧", c:["#0288d1","#00695c"]},
-  {type:"post", title:"Leadership Body Announcement", note:"Countdown series (Open Soon / Open Now / Closed)", folder:"leo/clean-water", file:"https://drive.google.com/file/d/1eqnRsP8MidEX7UDy5TD0qgZyQeymH-Ch/view?usp=sharing", icon:"📣", c:["#ffc857","#b71c1c"]},
+   
+   // Clean Water & Energy Conservation Avenue Images Folder Design
+  {type:"post", title:"Avenue Meetup Announcement ", note:"Flyer series (Coming Soon / Date & Venue Revel  / Happening Tomorrow / Happening Today / Successfully Completed)", folder:"leo/clean-water",
+pages:[
+   {file:"https://drive.google.com/file/d/1JMGZENJEcMS3loxmX2lNHm1uVn8BMEW_/view?usp=sharing", label:"Front Page"},
+   {file:"https://drive.google.com/file/d/1b2VIOwOfBoV7-nxvfW_bOUD4DKVzah71/view?usp=sharing", label:"Details Page"},
+   {file:"https://drive.google.com/file/d/1h4u1zmSUkiuvNtxOgWmlATZDVnOiQSvE/view?usp=sharing", label:"Details Page"},
+   {file:"https://drive.google.com/file/d/1h1-pJXWgQXxqFCyhWofgWoETveepYkUe/view?usp=sharing", label:"Details Page"},
+   {file:"https://drive.google.com/file/d/1zkpOLysOeBNPX32avywW-kfKKQAX2GWH/view?usp=sharing", label:"Back Page"},
+], icon:"💧", c:["#0288d1","#00695c"]},
+   
+  {type:"post", title:"Leadership Body Announcement", note:"Countdown series (Open Soon / Open Now /Closing Soon/ Closed)", folder:"leo/clean-water", 
+   pages:[
+   {file:"https://drive.google.com/file/d/1eqnRsP8MidEX7UDy5TD0qgZyQeymH-Ch/view?usp=sharing", label:"Front Page"},
+   {file:"https://drive.google.com/file/d/1ujmiw-JILNpYKw02_HmYBG9xqO1btDJH/view?usp=sharing", label:"Details Page"},
+   {file:"https://drive.google.com/file/d/10E3GrRbRIejv2ma21y9SaPuh8hpEEySS/view?usp=sharing", label:"Details Page"},
+   {file:"https://drive.google.com/file/d/14RqkGHd50sLQNBcQG-F8DY9WDzQnTZMg/view?usp=sharing", label:"Back Page"},
+   ], icon:"📣", c:["#ffc857","#b71c1c"]},
+
+{type:"post", title:"Book Mark Design", note:"Appreciation for Avenue Meetup Participants", folder:"leo/clean-water", file:"https://drive.google.com/file/d/1MRUY8T6JOlJR_0UPNDGolXH9eQp-ydVb/view?usp=sharing", icon:"🥗", c:["#2e7d32","#ffd54f"]},
+   
+{type:"post", title:"Invitation Design", note:"Avenue Meetup Invitation for the Executive Board and Board of Directors", folder:"leo/clean-water", file:"https://drive.google.com/file/d/1q8c4wQA6sjkEhLanQzSVUkcaN1k1jJdu/view?usp=sharing", icon:"🥗", c:["#2e7d32","#ffd54f"]},
+  
+   // Clean Water & Energy Conservation Avenue Video Folder Design
+{type:"video", title:"Avenue Recap Video ", note:"A short recap video capturing the key moments, activities, and highlights",folder:"leo/clean-water", file:"https://drive.google.com/file/d/1x_a76r5oh3PLTH9PNXpw7ngyA9nMe47i/view?usp=sharing", icon:"💡", c:["#00838f","#283593"]},
+
+   // Religion & Culture Avenue Images Folder Design
+{type:"post", title:"Book Mark Design", note:"Appreciation for Avenue Meetup Participants", folder:"leo/clean-water", file:"https://drive.google.com/file/d/1MRUY8T6JOlJR_0UPNDGolXH9eQp-ydVb/view?usp=sharing", icon:"🥗", c:["#2e7d32","#ffd54f"]},
+
+   
 
   /* INVITATION: 3 pages, opens one by one from top to bottom, NO border, original design only.
      Save your 3 images in assets/works/ with these names (or change the names / paste links here).
@@ -325,7 +353,7 @@ const WORKS = [
    
 
    
-
+                                                                                             
   /* ----- VIDEOS (16:9 + film-strip edge by default) ----- */
   /* This one is a Google Drive link. Drive > Share > "Anyone with the link" is required.
      If Drive keeps showing an error, upload the video to YouTube as "Unlisted" and paste that link instead. */
