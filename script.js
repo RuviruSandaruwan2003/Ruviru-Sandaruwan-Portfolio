@@ -511,7 +511,7 @@ pages:[
 
    {type:"post", title:" Digital Outlook – Media Partner Highlights Flyer", note:"Designed a flyer showcasing media partners and key event highlights.",  folder:"dept/other-design", file:"https://drive.google.com/file/d/1us_8FnPhcVxDSN3Yy8V-UVVK3mNaMsf1/view?usp=sharing", icon:"✒️", c:["#1a237e","#e53935"]},
  
-{type:"post", title:" 15th Installation – Logo Design", note:"Created a logo design for the 15th installation, representing its identity through creative visual elements.",  folder:"dept/other-design", file:"https://drive.google.com/file/d/1t2pEYnOMMF6u_x7K3zP_QV1ZMi_Qn3L0/view?usp=sharing", icon:"👕", c:["#1a237e","#e53935"]},
+{type:"post", title:" 15th Installation – Logo Design", note:"Created a logo design for the 15th installation, representing its identity through creative visual elements.",  folder:"dept/other-design", file:"https://drive.google.com/file/d/1t2pEYnOMMF6u_x7K3zP_QV1ZMi_Qn3L0/view?usp=sharing", icon:"✒️", c:["#1a237e","#e53935"]},
 
    // Depatment Other Design Video Folder Design
 
